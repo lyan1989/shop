@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="395bd125-8e05-485b-afc7-f5c4809236f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/bitfunx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bitfunx.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,12 +13,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitfunx/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
+            <state relative-caret-position="-644">
               <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
             </state>
           </provider>
@@ -24,17 +30,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="742">
+            <state>
               <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="97" column="104" selection-start-line="97" selection-start-column="104" selection-end-line="97" selection-end-column="104" />
+            <state relative-caret-position="-8">
+              <caret line="88" column="43" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -42,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fork_app/catalogue/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state>
               <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#38#66#0" expanded="true" />
@@ -54,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fork_app/dashboard/catalogue/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
+            <state>
               <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
@@ -68,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state>
               <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#642#674#0" expanded="true" />
@@ -80,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/partials/add_to_basket_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state>
               <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
@@ -89,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/templates/contact/email.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
+            <state>
               <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
             </state>
           </provider>
@@ -98,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contact/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
+            <state>
               <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -128,7 +134,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -171,11 +177,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="111" />
-    <option name="y" value="515" />
-    <option name="width" value="1573" />
-    <option name="height" value="976" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -188,70 +194,17 @@
         <subPane>
           <expand>
             <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
+              <item name="bitfunx_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bitfunx_shop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="catalogue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="contact" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="fork_app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="fork_app" type="462c0819:PsiDirectoryNode" />
-              <item name="catalogue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="fork_app" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="fork_app" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="catalogue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bitfunx_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bitfunx_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 2.7 (env) (2) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="bitfunx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 2.7 (env) (2) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="&lt; Python 2.7 (bitfunx_shop) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -263,9 +216,10 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bitfunx/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -337,16 +291,19 @@
       <workItem from="1557194631396" duration="11833000" />
       <workItem from="1557212238380" duration="15369000" />
       <workItem from="1558666194317" duration="1564000" />
+      <workItem from="1558673045083" duration="506000" />
+      <workItem from="1558673653966" duration="824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72030000" />
+    <option name="totallyTimeSpent" value="73360000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18656716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1933657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -357,10 +314,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970452" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.35147744" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -386,13 +343,7 @@
     <entry file="file://$PROJECT_DIR$/fork_app/catalogue/migrations/0014_product_video_url.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3612">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/django/forms/models.py" />
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/partials/review_stars.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -410,45 +361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
-          <folding>
-            <element signature="e#31#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/tables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2520">
-          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-604">
-          <caret line="186" column="40" selection-start-line="186" selection-start-column="29" selection-end-line="186" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/models.py" />
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/tables.py" />
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/views.py" />
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/dashboard/catalogue/forms.py" />
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/dashboard/comms/list.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -477,16 +393,7 @@
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/browse.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/abstract_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4116">
-          <caret line="322" column="68" selection-start-line="322" selection-start-column="68" selection-end-line="322" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/abstract_models.py" />
     <entry file="file://$PROJECT_DIR$/bitfunx/public/static/oscar/css/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70182">
@@ -494,26 +401,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69902">
-          <caret line="4993" column="1" selection-start-line="4993" selection-start-column="1" selection-end-line="4993" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/css/dashboard.css" />
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/partials/stock_record.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/product_attributes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/apps/catalogue/product_attributes.py" />
     <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/contact_form/views.py" />
     <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/contact_form/forms.py" />
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/contact_form/contact_form.txt" />
@@ -533,13 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="3118" column="1" selection-start-line="3118" selection-start-column="1" selection-end-line="3118" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/css/styles.css" />
     <entry file="file://$PROJECT_DIR$/bitfunx/public/static/oscar/less/bootstrap3/navbar.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -547,13 +433,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/less/bootstrap3/theme.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="212" column="1" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/Lib/site-packages/oscar/static/oscar/less/bootstrap3/theme.less" />
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/contact/success.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -588,23 +468,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitfunx/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
+        <state>
           <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fork_app/catalogue/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state>
           <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#38#66#0" expanded="true" />
@@ -614,7 +487,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fork_app/dashboard/catalogue/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state>
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
@@ -624,7 +497,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state>
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#642#674#0" expanded="true" />
@@ -634,21 +507,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/partials/add_to_basket_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state>
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/contact/email.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
+        <state>
           <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
+        <state>
           <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -658,8 +531,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/templates/catalogue/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="97" column="104" selection-start-line="97" selection-start-column="104" selection-end-line="97" selection-end-column="104" />
+        <state relative-caret-position="-8">
+          <caret line="88" column="43" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitfunx/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-644">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
         </state>
       </provider>
     </entry>
