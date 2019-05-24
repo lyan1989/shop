@@ -60,6 +60,10 @@ INSTALLED_APPS = [
     'pycountry',
     'contact',
 
+    'blog',
+    'config',
+    'comment'
+
 ] + get_core_apps([
     'fork_app.catalogue',
     'fork_app.dashboard.catalogue',
