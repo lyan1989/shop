@@ -46,7 +46,7 @@ class PostAdmin(admin.ModelAdmin):
         return super(PostAdmin, self).save_model(request, obj, form, change)
 
 @admin.register(Category)
-class ArticleCategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'status', 'is_nav', 'owner', 'created_time')
     fields = ('name', 'status', 'owner', 'is_nav')
 
