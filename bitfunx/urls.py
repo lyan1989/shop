@@ -18,8 +18,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include, url
 from oscar.app import application
-
-
+from bitfunx.custom_site import custom_site
+from blog.views import post_detail, post_list, links, MyView, PostDetailView, IndexView, CategoryView,TagView
+from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
@@ -28,8 +29,15 @@ urlpatterns = [
     url(r'^checkout/paypal/', include('paypal.express.urls')),
     # Optional
     #url(r'^dashboard/paypal/express/', application.urls),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^super_admin/', include(admin.site.urls)),
+    url(r'^admin/', include(custom_site.urls)),
     url(r'^contact/', include('contact.urls')),
+    url(r'^category/(?P<category_id>\d+)/$', CategoryView.as_view(), name='category-list'),
+    url(r'^tag/(?P<tag_id>\d+)/$', TagView.as_view(), name='post-list'),
+    url(r'^post/(?P<pk>\d+).html$',PostDetailView.as_view(), name='post-detail'),
+    url(r'^blog/$', IndexView.as_view(), name='index'),
+    url(r'^blog/about/$', TemplateView.as_view(template_name="blog/about.html")),
+    url(r'^links/$', links, name='links'),
     url(r'', include(application.urls)),
 ]
 
