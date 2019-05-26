@@ -132,12 +132,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bitfunx.urls'
 
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-THERE = 'default'
+THEME = 'default'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(location('theme'), THERE, 'templates'),
+            os.path.join(location('theme'), THEME, 'templates'),
 
             OSCAR_MAIN_TEMPLATE_DIR
         ],
@@ -267,7 +267,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
-    location('static/'),
+    os.path.join(location('theme'), THEME, 'static')
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
