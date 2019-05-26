@@ -80,8 +80,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Tag, site=custom_site)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ('name', 'status', 'created_time')
-    fields = ('name', 'status')
+    list_display = ('name', 'status', 'owner', 'created_time')
+    fields = ('name', 'owner', 'status')
 
 
 @admin.register(LogEntry, site=custom_site)

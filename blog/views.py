@@ -10,9 +10,11 @@ from config.models import SideBar, Link
 from django.shortcuts import get_object_or_404
 # Create your views here.
 
+
 class MyView(View):
     def get(self, request):
         return HttpResponse('result')
+
 
 class CommonViewMixin(object):
     def get_context_data(self, **kwargs):
@@ -20,7 +22,9 @@ class CommonViewMixin(object):
         context.update({
             'sidebars' : SideBar.get_all()
         })
-        context.update(Category.get_navs())
+        context.update(
+           Category.get_navs()
+        )
         return context
 
 
