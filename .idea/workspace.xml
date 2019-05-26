@@ -2,205 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="395bd125-8e05-485b-afc7-f5c4809236f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bitfunx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bitfunx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bitfunx/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/403.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/basket.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/addition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/line_restored.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/line_saved.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/new_total.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/offer_gained.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/messages/offer_lost.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/partials/basket_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/partials/basket_quick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/basket/partials/basket_totals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/blog/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/blog/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/blog/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/blog/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/browse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/category.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/add_to_basket_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/add_to_basket_form_compact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/add_to_wishlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/review.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/partials/stock_record.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/partials/review_stars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/review_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/review_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/review_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/catalogue/reviews/review_product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/gateway.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/nav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/payment_details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/shipping_address.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/shipping_methods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/thank_you.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/user_address_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/checkout/user_address_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/config/blocks/sidebar_comments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/config/blocks/sidebar_posts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/contact/email.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/contact/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_row_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_row_name.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/attribute_option_group_row_option_summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/category_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/category_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/category_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/category_row_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/messages/product_saved.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_class_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_class_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_class_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_row_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_row_image.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_row_stockrecords.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_row_title.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_row_variants.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/product_update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/catalogue/stockalert_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/comms/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/comms/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/benefit_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/condition_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/metadata_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/offer_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/offer_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/offer_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/progress.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/restrictions_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/step_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/offers/summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/line_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/order_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/order_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/partials/bulk_edit_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/shippingaddress_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/orders/statistics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/pages/delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/pages/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/pages/messages/saved.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/pages/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/alert_messages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/form_field.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/form_fields.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/form_fields_inline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/product_images.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partials/stock_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/messages/user_unlinked.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_manage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_user_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_user_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/partners/partner_user_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/delete_pagepromotion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/handpickedproductlist_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/page_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/pagepromotion_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/promotions/promotion_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/messages/range_products_saved.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/messages/range_saved.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/range_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/range_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/range_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/ranges/range_product_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/offer_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/open_basket_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/order_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/product_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/submitted_basket_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/user_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reports/partials/voucher_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reviews/review_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reviews/review_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/reviews/review_update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/band_created.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/band_deleted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/band_updated.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/method_created.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/method_deleted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/messages/method_updated.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_band_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_band_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_based_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_based_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_based_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/shipping/weight_based_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/alerts/delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/alerts/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/alerts/partials/alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/alerts/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/user_row_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/users/user_row_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_set_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_set_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/vouchers/voucher_set_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/widgets/popup_response.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/dashboard/widgets/related_widget_wrapper.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/layout_2_col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/layout_3_col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/login_forbidden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/alert_messages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/brand.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/extrascripts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/footer_checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/form_field.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/form_fields.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/form_fields_inline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/google_analytics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/google_analytics_transaction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/image_input_widget.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/mini_basket.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/nav_accounts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/nav_checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/nav_primary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/templates/partials/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bitfunx/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -226,14 +28,18 @@
         <entry file="file://$PROJECT_DIR$/bitfunx/theme/default/templates/blog/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="75" column="68" lean-forward="true" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
+              <caret line="75" column="68" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitfunx/theme/default/templates/blog/list.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -367,15 +173,6 @@
             <path>
               <item name="bitfunx_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="bitfunx_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="bitfunx" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bitfunx_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bitfunx_shop" type="462c0819:PsiDirectoryNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -477,16 +274,15 @@
       <workItem from="1558673045083" duration="506000" />
       <workItem from="1558673653966" duration="824000" />
       <workItem from="1558749276736" duration="22617000" />
-      <workItem from="1558842663252" duration="3468000" />
+      <workItem from="1558842663252" duration="4261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99965000" />
+    <option name="totallyTimeSpent" value="100758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20307444" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -789,12 +585,16 @@
     <entry file="file://$PROJECT_DIR$/bitfunx/theme/default/templates/blog/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="75" column="68" lean-forward="true" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
+          <caret line="75" column="68" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bitfunx/theme/default/templates/blog/list.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
