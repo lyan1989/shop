@@ -132,12 +132,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bitfunx.urls'
 
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-
+THERE = 'default'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            location('templates'),
+            os.path.join(location('theme'), THERE, 'templates'),
 
             OSCAR_MAIN_TEMPLATE_DIR
         ],
