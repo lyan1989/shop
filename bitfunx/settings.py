@@ -266,9 +266,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = (
-    os.path.join(location('theme'), THEME, 'static')
-)
+STATICFILES_DIRS = [
+    os.path.join(location('theme'), THEME, 'static'),
+]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
