@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 from .adminforms import PostAdminForm
-
+import mistune
 
 class Category(models.Model):
     STATUS_NORMAL =1
@@ -75,6 +75,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, verbose_name='title')
     desc = models.CharField(max_length=1024, blank=True, verbose_name='abstract')
     content = models.TextField(verbose_name='content',help_text='markdown format needed')
+    content_html = models.TextField(verbose_name="正文html代码", blank=True, editable=False)
     status = models.PositiveIntegerField(default=STATUS_NORMAL, choices=STATUS_ITEMS, verbose_name='status')
     tag = models.ForeignKey(Tag, verbose_name='tag')
     category = models.ForeignKey(Category, verbose_name='category')
@@ -82,19 +83,21 @@ class Post(models.Model):
     created_time = models.DateTimeField(auto_now_add=True, verbose_name='created time')
 
     pv = models.PositiveIntegerField(default=1)
-    nv = models.PositiveIntegerField(default=1)
+    uv = models.PositiveIntegerField(default=1)
 
 
 
     class Meta:
         verbose_name = verbose_name_plural = 'article'
-        ordering = ['-id'] #根据ID进行降序
+        ordering = ['-created_time'] #根据ID进行降序
 
+    def save(self, *args, **kwargs):
+        self.content_html = mistune.markdown(self.content)
+        super(Post, self).save(*args, **kwargs)
 
     @classmethod
     def hot_posts(cls):
         return cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
-
 
     @staticmethod
     def get_by_tag(tag_id):

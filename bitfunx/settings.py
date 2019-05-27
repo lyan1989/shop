@@ -62,7 +62,8 @@ INSTALLED_APPS = [
 
     'blog',
     'config',
-    'comment'
+    'comment',
+    'mistune'
 
 ] + get_core_apps([
     'fork_app.catalogue',
@@ -117,6 +118,7 @@ PAYPAL_PAYFLOW_DASHBOARD_FORMS = True
 
 #middleware definition
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,6 +129,8 @@ MIDDLEWARE = [
 
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'blog.middleware.user_id.UserIDMiddleware',
+
 ]
 
 ROOT_URLCONF = 'bitfunx.urls'
