@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="395bd125-8e05-485b-afc7-f5c4809236f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bitfunx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bitfunx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitfunx/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bitfunx/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="395bd125-8e05-485b-afc7-f5c4809236f3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitfunx/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="442">
+              <caret line="38" column="81" lean-forward="true" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
               <folding>
                 <element signature="e#642#674#0" expanded="true" />
               </folding>
@@ -43,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-73">
+            <state relative-caret-position="305">
               <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
@@ -344,16 +335,15 @@
       <workItem from="1558666194317" duration="1564000" />
       <workItem from="1558673045083" duration="506000" />
       <workItem from="1558673653966" duration="824000" />
-      <workItem from="1558749276736" duration="22617000" />
+      <workItem from="1558749276736" duration="23332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95977000" />
+    <option name="totallyTimeSpent" value="96692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -683,22 +673,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/views.py">
+    <entry file="file://$PROJECT_DIR$/bitfunx/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-73">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="442">
+          <caret line="38" column="81" lean-forward="true" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#642#674#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitfunx/urls.py">
+    <entry file="file://$PROJECT_DIR$/blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="305">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding>
-            <element signature="e#642#674#0" expanded="true" />
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
