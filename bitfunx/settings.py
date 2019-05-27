@@ -63,7 +63,8 @@ INSTALLED_APPS = [
     'blog',
     'config',
     'comment',
-    'mistune'
+    'mistune',
+    'ckeditor',
 
 ] + get_core_apps([
     'fork_app.catalogue',
@@ -72,6 +73,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+CKEDITOR_BASEPATH="/my_static/ckeditor/ckeditor/"
 
 # Oscar settings
 from oscar.defaults import *

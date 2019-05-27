@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
-from .adminforms import PostAdminForm
 import mistune
+
 
 class Category(models.Model):
     STATUS_NORMAL =1
@@ -41,7 +41,6 @@ class Category(models.Model):
         }
 
 
-
 class Tag(models.Model):
     STATUS_NORMAL= 1
     STATUS_DELETE = 0
@@ -71,7 +70,7 @@ class Post(models.Model):
         (STATUS_DELETE, 'delete'),
         (STATUS_DRAFT, 'draft'),
     )
-    form = PostAdminForm
+
     title = models.CharField(max_length=255, verbose_name='title')
     desc = models.CharField(max_length=1024, blank=True, verbose_name='abstract')
     content = models.TextField(verbose_name='content',help_text='markdown format needed')
