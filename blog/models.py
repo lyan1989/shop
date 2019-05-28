@@ -91,7 +91,7 @@ class Post(models.Model):
         ordering = ['-created_time'] #根据ID进行降序
 
     def save(self, *args, **kwargs):
-        self.content_html = self.content
+        self.content_html = mistune.markdown(self.content)
         super(Post, self).save(*args, **kwargs)
 
     @classmethod

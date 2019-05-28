@@ -388,7 +388,7 @@
 						.find('div.ss-controls a').removeClass().addClass('play')
 						.attr('title', this.playLinkText)
 						.attr('href', '#play')
-						.base(this.playLinkText);
+						.html(this.playLinkText);
 				}
 				
 				return this;
@@ -403,7 +403,7 @@
 						.find('div.ss-controls a').removeClass().addClass('pause')
 						.attr('title', this.pauseLinkText)
 						.attr('href', '#pause')
-						.base(this.pauseLinkText);
+						.html(this.pauseLinkText);
 				}
 
 				if (!this.slideshowTimeout) {

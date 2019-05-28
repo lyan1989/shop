@@ -147,7 +147,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bitfunx.urls'
 
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-THEME = 'unishop'
+THEME = 'default'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

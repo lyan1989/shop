@@ -9,9 +9,7 @@ class PostAdminForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorUploadingWidget(), label='content', required=False)
     class Meta:
         model = Post
-        fields = (
-            'category', 'tag', 'desc', 'title',  'content', 'status'
-        )
+        fields = '__all__'
 
 
 
