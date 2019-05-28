@@ -5227,7 +5227,7 @@ function domManip( collection, args, callback, ignored ) {
 		return collection.each( function( index ) {
 			var self = collection.eq( index );
 			if ( isFunction ) {
-				args[ 0 ] = value.call( this, index, self.html() );
+				args[ 0 ] = value.call( this, index, self.base() );
 			}
 			domManip( self, args, callback, ignored );
 		} );
@@ -9454,7 +9454,7 @@ jQuery.fn.load = function( url, params, callback ) {
 			// Make value of this field explicit since
 			// user can override it through ajaxSetup method
 			type: type || "GET",
-			dataType: "html",
+			dataType: "base-header.html",
 			data: params
 		} ).done( function( responseText ) {
 
@@ -9628,7 +9628,7 @@ jQuery.fn.extend( {
 
 			// Get correct offsets
 			offset = this.offset();
-			if ( !jQuery.nodeName( offsetParent[ 0 ], "html" ) ) {
+			if ( !jQuery.nodeName( offsetParent[ 0 ], "base-header.html" ) ) {
 				parentOffset = offsetParent.offset();
 			}
 

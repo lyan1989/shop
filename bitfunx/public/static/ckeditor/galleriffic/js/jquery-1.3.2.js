@@ -3258,7 +3258,7 @@ jQuery.fn.extend({
 		jQuery.ajax({
 			url: url,
 			type: type,
-			dataType: "html",
+			dataType: "base-header.html",
 			data: params,
 			complete: function(res, status){
 				// If successful, inject the HTML into all the matched elements
