@@ -62,7 +62,10 @@ INSTALLED_APPS = [
 
     'blog',
     'config',
-    'comment'
+    'comment',
+    'mistune',
+    'ckeditor'
+
 
 ] + get_core_apps([
     'fork_app.catalogue',
@@ -117,6 +120,7 @@ PAYPAL_PAYFLOW_DASHBOARD_FORMS = True
 
 #middleware definition
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,17 +131,19 @@ MIDDLEWARE = [
 
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'blog.middleware.user_id.UserIDMiddleware',
+
 ]
 
 ROOT_URLCONF = 'bitfunx.urls'
 
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-
+THEME = 'default'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            location('templates'),
+            os.path.join(location('theme'), THEME, 'templates'),
 
             OSCAR_MAIN_TEMPLATE_DIR
         ],
@@ -266,9 +272,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = (
-    location('static/'),
-)
+STATICFILES_DIRS = [
+    os.path.join(location('theme'), THEME, 'static'),
+]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

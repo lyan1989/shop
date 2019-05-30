@@ -24,5 +24,12 @@ class Comment(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = 'comment'
 
+    @classmethod
+    def get_by_target(cls, target):
+        return cls.objects.filter(target = target, status = Post.STATUS_NORMAL)
+
+
+
+
 
 # Create your models here.

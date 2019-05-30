@@ -43,7 +43,7 @@ class SideBar(models.Model):
     )
 
     title = models.CharField(max_length=50, verbose_name='title')
-    display_type = models.PositiveIntegerField(default=1, choices=STATUS_ITEMS, verbose_name='display type')
+    display_type = models.PositiveIntegerField(default=1, choices=SIDE_TYPE, verbose_name='display type')
     content = models.CharField(max_length=500, blank=True, verbose_name='content')
     status = models.PositiveIntegerField(default=STATUS_SHOW,choices=STATUS_ITEMS, verbose_name='status')
     owner = models.ForeignKey(User, verbose_name='author')
@@ -67,9 +67,9 @@ class SideBar(models.Model):
             result = self.content
         elif self.display_type == self.DISPLAY_LATEST:
             context = {
-                'posts' : Post.latest_posts()
+                'posts' : Post.objects.filter(status=Post.STATUS_NORMAL)
             }
-            result = render_to_string('config/blocks/sidebar_posts.html',context)
+            result = render_to_string('config/blocks/sidebar_posts.html', context)
         elif self.display_type == self.DISPLAY_HOT:
             context = {
                 'posts' : Post.hot_posts()
