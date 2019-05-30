@@ -1,0 +1,84 @@
+{% load currency_filters %}
+{% load staticfiles %}
+{% load category_tags %}
+{% load i18n %}
+
+<div class="search-box-wrap d-flex">
+          <div class="search-box-inner align-self-center">
+            <div class="search-box d-flex">
+              <div class="btn-group categories-btn">
+                <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="icon-menu text-lg"></i>&nbsp;Categories</button>
+                <div class="dropdown-menu mega-dropdown">
+
+                </div>
+              </div>
+
+                <form method="get" action="{% url 'search:search' %}" class="input-group">
+                    <span class="input-group-btn"><button type="submit"><i class="icon-search"></i></button></span>
+                        <div >
+                        {{ search_form.q }}
+                        </div>
+                </form>
+
+            </div>
+          </div>
+</div>
+
+<div class="toolbar d-flex">
+          <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a href="#">
+              <div><i class="icon-menu"></i><span class="text-label">Menu</span></div></a></div>
+          <div class="toolbar-item hidden-on-mobile"><a href="#">
+              <div><i class="flag-icon"><img src="{% static 'img/flags/EN.png' %}" alt="English"></i><span class="text-label">Eng / Usd</span></div></a>
+            <ul class="toolbar-dropdown lang-dropdown">
+              <li class="px-3 pt-1 pb-2">
+                <select class="form-control form-control-sm">
+                  <option value="usd">$ USD</option>
+                  <option value="usd">€ EUR</option>
+                  <option value="usd">£ UKP</option>
+                  <option value="usd">¥ JPY</option>
+                </select>
+              </li>
+              <li><a href="#"><i class="flag-icon"><img src="{% static 'img/flags/FR.png' %}" alt="Français"></i>&nbsp;Français</a></li>
+              <li><a href="#"><i class="flag-icon"><img src="{% static 'img/flags/DE.png' %}" alt="Deutsch"></i>&nbsp;Deutsch</a></li>
+              <li><a href="#"><i class="flag-icon"><img src="{% static 'img/flags/IT.png' %}" alt="Italiano"></i>&nbsp;Italiano</a></li>
+            </ul>
+          </div>
+          <div class="toolbar-item hidden-on-mobile"><a href="#">
+              <div><i class="icon-user"></i><span class="text-label">Sign</span></div></a>
+              <div class="toolbar-dropdown text-center px-3">
+                  {% if user.is_authenticated %}
+                      {% block nav_account_navbar_authenticated %}
+                          <a class="btn btn-secondary btn-sm " href="{% url 'customer:summary' %}">{% trans 'Account' %}</a>
+                     <a id="logout_link" class="btn btn-primary btn-sm " href="{% url 'customer:logout' %}">{% trans 'Logout' %}</a>
+
+                      {% endblock %}
+                  {% else %}
+                             <p class="text-xs mb-3 pt-2">Sign in to your account or register new one to have full control over your orders, receive bonuses and more.</p>
+                      <a class="btn btn-primary btn-sm btn-block" href="{% url 'customer:login' %}">Sign In</a>
+                              <p class="text-xs text-muted mb-2">New customer?&nbsp;<a href="{% url 'customer:login' %}">Register</a></p>
+                  {% endif %}
+{#              <p class="text-xs mb-3 pt-2">Sign in to your account or register new one to have full control over your orders, receive bonuses and more.</p><a class="btn btn-primary btn-sm btn-block" href="account-login.html">Sign In</a>#}
+{#              <p class="text-xs text-muted mb-2">New customer?&nbsp;<a href="account-login.html">Register</a></p>#}
+            </div>
+          </div>
+            <div class="toolbar-item ">
+
+            {% include 'partials/mini_basket.html' %}
+            </div>
+
+</div>
+
+        <!-- Mobile Menu-->
+<div class="mobile-menu">
+  <!-- Search Box-->
+  <div class="mobile-search">
+    <form class="input-group" action="{% url 'search:search' %}" method="get">
+        <span class="input-group-btn"><button type="submit"><i class="icon-search"></i></button></span>
+      <div >
+                {{ search_form.q }}
+      </div>
+    </form>
+  </div>
+</div>
+
+

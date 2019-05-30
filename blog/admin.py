@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from bitfunx.custom_site import custom_site
 from django.contrib.admin.models import LogEntry
+from .adminform import PostAdminForm
 
 class CategoryOwnerFilter(admin.SimpleListFilter):
     """ 自定义过滤器，只展示当前用户分类"""
@@ -26,6 +27,7 @@ class CategoryOwnerFilter(admin.SimpleListFilter):
 
 @admin.register(Post, site=custom_site)
 class PostAdmin(admin.ModelAdmin):
+    form = PostAdminForm
     list_display=[
         'title', 'category', 'status', 'owner',
         'created_time', 'operator'
@@ -40,13 +42,6 @@ class PostAdmin(admin.ModelAdmin):
 
     save_on_top=True
 
-    fields=(
-        ('category', 'title'),
-        'desc',
-        'status',
-        'content',
-        'tag',
-    )
 
     def post_count(self, obj):
         return obj.post_set.count()
@@ -66,10 +61,6 @@ class PostAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         qs = super(PostAdmin, self).get_queryset(request)
         return qs.filter(owner=request.user)
-
-    class Meta:
-        css = {'all':("https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css",)}
-        js = ('https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.js',)
 
 
 @admin.register(Category, site=custom_site)

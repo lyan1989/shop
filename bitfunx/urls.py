@@ -22,6 +22,8 @@ from blog.views import post_detail, post_list, links, MyView, PostDetailView, In
     CategoryView,TagView, SearchView, AuthorView, LinkView
 from django.views.generic import TemplateView
 from comment.views import CommentView
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
@@ -42,6 +44,7 @@ urlpatterns = [
     url(r'^search/$', SearchView.as_view(), name='search'),
     url(r'^author/(?P<owner_id>\d+)/$', AuthorView.as_view(), name='author'),
     url(r'^comment/$', CommentView.as_view(), name='comment'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'', include(application.urls)),
-]
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 

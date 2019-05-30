@@ -1,0 +1,51 @@
+{% load history_tags %}
+{% load basket_tags %}
+{% load currency_filters %}
+{% load thumbnail %}
+{% load i18n %}
+{% load staticfiles %}
+
+
+    {% if request.basket.num_lines %}
+        {% for line in request.basket.all_lines %}
+
+                <div class="entry">
+                    <div class="entry-thumb">
+                        <div class="image_container">
+                            {% with image=line.product.primary_image %}
+                                {% thumbnail image.original "100x100" upscale=False as thumb %}
+                                <a href="{{ line.product.get_absolute_url }}"><img class="thumbnail" src="{{ thumb.url }}" alt="{{ line.product.get_title }}"></a>
+                                {% endthumbnail %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                    <div class="entry-content">
+                        <h4 class="entry-title"><a href="{{ line.product.get_absolute_url }}">{{ line.description }}</a></h4>
+                        <span class="entry-meta">{{ line.quantity }} *  {{ line.unit_price_excl_tax|currency:request.basket.currency  }}</span>
+                    </div>
+                    <div class="entry-delete"><i class="icon-x"></i></div>
+                </div>
+        {% endfor %}
+
+        <div class="text-right">
+                <p class="text-gray-dark py-2 mb-0">
+                       {% if request.basket.is_tax_known %}
+                    <span class="text-muted">{% trans "Total:" %} {{ request.basket.total_incl_tax|currency:request.basket.currency }}</span>
+                {% else %}
+                    <span class="text-muted">{% trans "Total:" %} {{ request.basket.total_excl_tax|currency:request.basket.currency }}</span>
+                {% endif %}
+
+
+                </p>
+        </div>
+
+        <div class="d-flex">
+                <div class="pr-2 w-50"><a class="btn btn-secondary btn-sm btn-block mb-0" href="{% url 'basket:summary' %}">View Basket</a></div>
+                <div class="pl-2 w-50"><a class="btn btn-primary btn-sm btn-block mb-0" href="{% url 'checkout:index' %}">Checkout</a></div>
+        </div>
+
+
+    {% else %}
+        <p>{% trans "Your basket is empty." %}</p>
+    {% endif %}
+

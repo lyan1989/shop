@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Unishop | Universal E-Commerce Template
+    </title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Unishop - Universal E-Commerce Template">
+    <meta name="keywords" content="shop, e-commerce, modern, flat style, responsive, online store, business, mobile, blog, bootstrap 4, html5, css3, jquery, js, gallery, slider, touch, creative, clean">
+    <meta name="author" content="Rokaux">
+    <!-- Mobile Specific Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon and Apple Icons-->
+      {% block favicon %}
+        <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+              <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+              <link rel="apple-touch-icon" href="{% static 'img/touch-icon-iphone.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/touch-icon-ipad.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/touch-icon-iphone-retina.png' %}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{% static 'img/touch-icon-ipad-retina.png' %}">
+      {% endblock %}
+
+    {% block styles %}
+    <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
+    <link rel="stylesheet" media="screen" href="{% static 'css/vendor.min.css' %}">
+    <!-- Main Template Styles-->
+    <link id="mainStyles" rel="stylesheet" media="screen" href="{% static 'css/styles.min.css' %}">
+    {% endblock %}
+    <!-- Modernizr-->
+  {% block extrahead %}{% endblock %}
+
+
+  </head>
+  <!-- Body-->
+  <body id="{% block body_id %}default{% endblock %}" class = "{% block body_class %}default{% endblock %}">
+    <!-- Header-->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+
+ <header class="site-header navbar-sticky">
+      <!-- Topbar-->
+      <div class="topbar d-flex justify-content-between">
+          {% include 'partials/brand.html' %}
+          {% block navigation %}
+              {% include 'partials/nav_primary.html' %}
+          {% endblock %}
+      </div>
+    </header>
+
+
+
+    {% block body_block %}{% endblock %}
+
+    <!-- Page Content-->
+    <!-- Main Slider-->
+
+{% block layout %}
+
+{% endblock %}
+
+
+    <!-- Back To Top Button--><a class="scroll-to-top-btn" href="#"><i class="icon-chevron-up"></i></a>
+    <!-- Backdrop-->
+    <div class="site-backdrop"></div>
+    <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
+        {% block scripts %}
+            <script src="{% static 'js/modernizr.min.js' %}"></script>
+            <script src="{% static 'js/vendor.min.js' %}"></script>
+            <script src="{% static 'js/scripts.min.js' %}"></script>
+        {% endblock %}
+  {% block extrascripts %} {% endblock %}
+
+  <script>
+
+      $(function(){
+          {% block onbodyload %} {% endblock %}
+      })
+  </script>
+
+  </body>
+</html>

@@ -64,8 +64,13 @@ INSTALLED_APPS = [
     'config',
     'comment',
     'mistune',
+<<<<<<< HEAD
     'ckeditor'
 
+=======
+    'ckeditor',
+    'ckeditor_uploader',
+>>>>>>> c7210108bdbdd9bc7d9b86c09f6c05d99d5be466
 
 ] + get_core_apps([
     'fork_app.catalogue',
@@ -74,6 +79,15 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar' : 'full',
+        'height' : 300,
+        'width' : 900,
+        'tabSpaces' : 4,
+        'extraPlugins' : 'codesnippet',
+    }
+}
 
 # Oscar settings
 from oscar.defaults import *
@@ -138,7 +152,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bitfunx.urls'
 
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-THEME = 'default'
+THEME = 'unishop'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -269,6 +283,7 @@ LANGUAGES = (
 MEDIA_ROOT = location("public/media")
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+CKEDITOR_UPLOAD_PATH = 'article_images'
 
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
