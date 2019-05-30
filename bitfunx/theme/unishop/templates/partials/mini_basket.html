@@ -1,21 +1,10 @@
 {% load currency_filters %}
 {% load i18n %}
+<a href="{% url 'basket:summary' %}">
+    <div><span class="cart-icon"><i class="icon-shopping-cart"></i><span class="count-label">3      </span></span>
+   <br> <span lass="text-label">Cart</span></div></a>
 
-<div class="basket-mini pull-right hidden-xs">
-    <strong>{% trans "Basket total:" %}</strong>
-    {% if request.basket.is_tax_known %}
-        {{ request.basket.total_incl_tax|currency:request.basket.currency }}
-    {% else %}
-        {{ request.basket.total_excl_tax|currency:request.basket.currency }}
-    {% endif %}
-
-    <span class="btn-group">
-        <a class="btn btn-default" href="{% url 'basket:summary' %}">{% trans "View basket" %}</a>
-        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu pull-right">
-            <li>{% include "basket/partials/basket_quick.html" %}</li>
-        </ul>
-    </span>
-</div>
+ <div class="toolbar-dropdown cart-dropdown widget-cart hidden-on-mobile">
+     <!-- Entry-->
+      {% include 'basket/partials/basket_quick.html' %}
+ </div>
