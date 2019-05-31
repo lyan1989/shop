@@ -64,14 +64,9 @@ INSTALLED_APPS = [
     'config',
     'comment',
     'mistune',
-<<<<<<< HEAD
-    'ckeditor'
 
-=======
     'ckeditor',
     'ckeditor_uploader',
->>>>>>> c7210108bdbdd9bc7d9b86c09f6c05d99d5be466
-
 ] + get_core_apps([
     'fork_app.catalogue',
     'fork_app.dashboard.catalogue',

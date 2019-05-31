@@ -6665,6 +6665,7 @@ video {
   line-height: 1.3;
 }
 
+
 .breadcrumbs {
   display: block;
   margin: 0;
@@ -6681,6 +6682,7 @@ video {
   font-size: 13px;
   cursor: default;
   vertical-align: middle;
+
 }
 
 .breadcrumbs > li.separator {
@@ -6693,6 +6695,7 @@ video {
 
 .breadcrumbs > li.separator::before {
   content: '\e930';
+
 }
 
 .breadcrumbs > li > a {

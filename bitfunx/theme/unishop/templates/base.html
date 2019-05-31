@@ -30,25 +30,24 @@
     {% endblock %}
     <!-- Modernizr-->
   {% block extrahead %}{% endblock %}
-
-
+      <script src="{% static 'js/modernizr.min.js' %}"></script>
+  {% block tracking %}
+      {% include "partials/google_analytics.html" %}
+  {% endblock %}
   </head>
+
   <!-- Body-->
   <body id="{% block body_id %}default{% endblock %}" class = "{% block body_class %}default{% endblock %}">
     <!-- Header-->
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
 
- <header class="site-header navbar-sticky">
-      <!-- Topbar-->
-      <div class="topbar d-flex justify-content-between">
-          {% include 'partials/brand.html' %}
-          {% block navigation %}
-              {% include 'partials/nav_primary.html' %}
-          {% endblock %}
-      </div>
-    </header>
+    {% block cdn_scripts %}
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "oscar/js/jquery/jquery.min.js" %}"><\/script>')</script>
+{% endblock %}
 
-
+ 
 
     {% block body_block %}{% endblock %}
 
@@ -56,7 +55,6 @@
     <!-- Main Slider-->
 
 {% block layout %}
-
 {% endblock %}
 
 

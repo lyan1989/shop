@@ -5,12 +5,13 @@
 {% load staticfiles %}
 
 {% block product %}
-    <article class="product_pod">
+    <div class="product-card mb-30">
         {% block product_image %}
             <div class="image_container">
                 {% with image=product.primary_image %}
                     {% thumbnail image.original "x120" upscale=False as thumb %}
-                    <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="thumbnail"></a>
+                    <!-- <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="thumbnail"></a> -->
+                    <a class="product-thumb" href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="Product"></a>
                     {% endthumbnail %}
                 {% endwith %}
             </div>
@@ -18,13 +19,14 @@
 
         {% block product_review %}
             {% iffeature "reviews" %}
-                <p class="star-rating {{ product.rating|as_stars }}">
+            <div class="product-review"></div>
+                <div class="star-rating {{ product.rating|as_stars }}">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
-                </p>
+                </div>
             {% endiffeature %}
         {% endblock %}
 
@@ -40,5 +42,5 @@
                 {% endif %}
             </div>
         {% endblock %}
-    </article>
+        </div>
 {% endblock %}

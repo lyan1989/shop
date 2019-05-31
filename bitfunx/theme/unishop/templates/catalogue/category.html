@@ -3,44 +3,59 @@
 {% load i18n %}
 
 {% block title %}
-    {{ category.name }} | {{ block.super }}
+{{ category.name }} | {{ block.super }}
 {% endblock %}
 
 {% block description %}
-    {{ category.description|default:""|striptags }}
+{{ category.description|default:""|striptags }}
 {% endblock %}
 
 {% block header%}
-    <div class="page-header action">
-        {% if user.is_staff %}
-            <a class="pull-right hidden-xs" href="{% url 'dashboard:catalogue-category-update' pk=category.id %}"><small><i class="icon-edit"></i> {% trans "Edit this category" %}</small></a>
-        {% endif %}
-        <h1>{% block headertext %}{{ category.name }}{% endblock %}</h1>
-    </div>
+<div class="page-header action">
+    {% if user.is_staff %}
+    <a class="pull-right hidden-xs" href="{% url 'dashboard:catalogue-category-update' pk=category.id %}"><small><i
+                class="icon-edit"></i> {% trans "Edit this category" %}</small></a>
+    {% endif %}
+    <h1>{% block headertext %}{{ category.name }}{% endblock %}</h1>
+</div>
 {% endblock %}
 
 {% block breadcrumbs %}
-    <ul class="breadcrumb">
-        <li>
-            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
-        </li>
-        {% for category in category.get_ancestors %}
-            <li>
-                <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-            </li>
-        {% endfor %}
-        <li class="active">{{ category.name }}</li>
-    </ul>
+
+<div class="page-title">
+    <div class="container">
+            <div class="column">
+                    <h1>{{ category.name }}</h1>
+                  </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li>
+                    <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+                </li>
+                {% for category in category.get_ancestors %}
+                <li class="separator">&nbsp;</li>
+                <li class="activate">
+                    <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+                <li class="separator">&nbsp;</li>
+                <li class="active">{{ category.name }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock breadcrumbs %}
 
 {% block content %}
-    {% if category.description %}
-        <div class="row">
-            <div class="col-sm-9"><p>{{ category.description|safe }}</p></div>
-            {% if category.image %}
-                <div class="col-sm-3"><img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-responsive" /></div>
-            {% endif %}
-        </div>
+{% if category.description %}
+<div class="row">
+    <div class="col-sm-9">
+        <p>{{ category.description|safe }}</p>
+    </div>
+    {% if category.image %}
+    <div class="col-sm-3"><img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-responsive" /></div>
     {% endif %}
-    {{ block.super }}
+</div>
+{% endif %}
+{{ block.super }}
 {% endblock %}

@@ -13,7 +13,7 @@ class Product(AbstractProduct):
     tutorial = models.TextField(blank=True)
     aliexpress_url = models.URLField(blank=True)
 
-    is_featured = models.BooleanField(default=False)
+
 
 
 

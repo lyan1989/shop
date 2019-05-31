@@ -12,22 +12,39 @@
 {% block headertext %}{{ summary }}{% endblock %}
 
 {% block breadcrumbs %}
-    <ul class="breadcrumb">
-        <li>
-            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
-        </li>
-        <li class="active">{{ summary }}</li>
-    </ul>
+
+
+
+    <div class="page-title">
+            <div class="container">
+              <div class="column">
+                <h1>All Products</h1>
+              </div>
+              <div class="column">
+                <ul class="breadcrumbs">
+                  <li><a href="{{ homepage_url }}">Home</a>
+                  </li>
+                  <li class="separator">&nbsp;</li>
+                  <li class="activate">{{ summary }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+   
 {% endblock breadcrumbs %}
 
 {% block column_left %}
+<div class="sidebar-toggle position-left"><i class="icon-filter"></i></div>
+<aside class="sidebar sidebar-offcanvas position-left"><span class="sidebar-close"><i class="icon-x"></i></span>
+<section class="widget widget-categories">
+        <h3 class="widget-title">Shop Categories</h3>
     {% category_tree as tree_categories %}
     {% if tree_categories %}
-        <h4>{% trans "Show results for" %}</h4>
-        <div class="side_categories">
-            <ul class="nav nav-list">
+        <!-- <h4>{% trans "Show results for" %}</h4> -->
+        <!-- <div class="side_categories"> -->
+            <ul >
                 {% for tree_category, info in tree_categories %}
-                    <li>
+                    <li class="has-children expanded">
                         <a href="{{ tree_category.get_absolute_url }}">
                             {% if tree_category.pk == category.pk %}
                                 <strong>{{ tree_category.name }}</strong>
@@ -36,13 +53,19 @@
                             {% endif %}
                         </a>
 
-                        {% if info.has_children %}<ul>{% else %}</li>{% endif %}
+                        {% if info.has_children %}
+                        <ul>
+
+                        {% else %}
+                        </li>
+                        {% endif %}
                         {% for n in info.num_to_close %}
                             </ul></li>
                         {% endfor %}
+                        </li>
                 {% endfor %}
             </ul>
-        </div>
+        <!-- </div> -->
     {% endif %}
     {% if has_facets %}
         <h4>{% trans "Refine by" %}</h4>
@@ -54,6 +77,11 @@
             {% endfor %}
         </div>
     {% endif %}
+
+</section>
+
+</aside>
+
 {% endblock %}
 
 {% block content %}

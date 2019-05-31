@@ -5,7 +5,7 @@ class ProductForm(base_forms.ProductForm):
     class Meta(base_forms.ProductForm.Meta):
 
         fields = (
-            'title', 'upc', 'video_url','is_featured', 'aliexpress_url', 'description', 'tutorial', 'is_discountable', 'structure')
+            'title', 'upc', 'video_url', 'aliexpress_url', 'description', 'tutorial', 'is_discountable', 'structure')
 
 
 

@@ -4,81 +4,76 @@
 {% load promotion_tags %}
 
 
-
+{% block header %}
+    {% include 'partials/nav_primary.html' %}
+{% endblock %}
 
 {% block layout %}
-    {# Top-horizontal bar with account, notifictions, dashboard links #}
+{# Top-horizontal bar with account, notifictions, dashboard links #}
 
-    {# Site logo/title, mini-basket, browse dropdown and searchbox #}
+{# Site logo/title, mini-basket, browse dropdown and searchbox #}
 
-        {% block slider %}
-            {% include 'partials/slider.html' %}
-        {% endblock %}
-    {% block featured %}
-        {% include 'partials/featured.html' %}
-        {% endblock %}
-
-    {# Main content of page - other layout templates may override this block #}
-    {% block content_wrapper %}
+{% include 'partials/nav_primary.html' %}
 
 
-        <div class="container-fluid page">
-            <div class="page_inner">
-                {% block breadcrumbs %}{% endblock %}
-                {% block header %}
-                    <div class="page-header action">
-                        <h1>{% block headertext %}{% endblock %}</h1>
-                    </div>
-                {% endblock %}
-                {% include "partials/alert_messages.html" %}
-                {% block subnavigation %}{% endblock %}
-                <div class="content">
-                    {% block subheader %}{% endblock subheader %}
 
-                    {# Render promotions #}
-                    <div id="promotions">
-                        {% for promotion in promotions_page %}
-                            {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
+{# Main content of page - other layout templates may override this block #}
+{% block content_wrapper %}
+<div class="container-fluid page">
 
-                    {# Div exists for AJAX updates to entire content section #}
-                    <div id="content_inner">{% block content %}{% endblock %}</div>
-                </div>
+    <div class="page_inner">
+        {% block breadcrumbs %}{% endblock %}
+    
+        {% include "partials/alert_messages.html" %}
+        {% block subnavigation %}{% endblock %}
+        <div class="content">
+            {% block subheader %}{% endblock subheader %}
+
+            {# Render promotions #}
+            <div id="promotions">
+                {% for promotion in promotions_page %}
+                {% render_promotion promotion %}
+                {% endfor %}
             </div>
+
+            {# Div exists for AJAX updates to entire content section #}
+            <div id="content_inner">{% block content %}{% endblock %}</div>
         </div>
-    {% endblock %}
-    {% block contact %} {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% block contact %} {% endblock %}
 {% include "partials/footer.html" %}
 {% endblock %}
 
 
 {% block cdn_scripts %}
-  {{ block.super }}
-  {% if use_less and debug %}
-    {# Load the on-the-fly less compiler. Never do this in production. #}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-  {% endif %}
+{{ block.super }}
+{% if use_less and debug %}
+{# Load the on-the-fly less compiler. Never do this in production. #}
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+{% endif %}
 {% endblock %}
 
 {# Local scripts #}
 {% block scripts %}
-    {{ block.super }}
-    <!-- Twitter Bootstrap -->
-    <script src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
-    <!-- Oscar -->
-    <script src="{% static "oscar/js/oscar/ui.js" %}"></script>
+{{ block.super }}
+<!-- Twitter Bootstrap -->
+<script src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
+<!-- Oscar -->
+<script src="{% static "oscar/js/oscar/ui.js" %}"></script>
 
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
+<script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
+<script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
 {% endblock %}
 
 {% block extrascripts %}
-    {% include "partials/extrascripts.html" %}
-    {{ block.super }}
+{% include "partials/extrascripts.html" %}
+{{ block.super }}
 {% endblock %}
 
 {% block onbodyload %}
-    {{ block.super }}
-    oscar.init();
+{{ block.super }}
+oscar.init();
 {% endblock %}
