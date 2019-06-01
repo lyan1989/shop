@@ -3,23 +3,25 @@
 {% load purchase_info_tags %}
 
 {% purchase_info_for_product request product as session %}
-
+<h4 class="product-price">
 {% if session.price.exists %}
+
     {% if session.price.excl_tax == 0 %}
-        <p class="price_color">{% trans "Free" %}</p>
+      {% trans "Free" %}
     {% elif session.price.is_tax_known %}
-        <p class="price_color">{{ session.price.incl_tax|currency:session.price.currency }}</p>
+       {{ session.price.incl_tax|currency:session.price.currency }}
     {% else %}
-        <p class="price_color">{{ session.price.excl_tax|currency:session.price.currency }}</p>
+        {{ session.price.excl_tax|currency:session.price.currency }}
     {% endif %}
 {% else %}
-    <p class="price_color">&nbsp;</p>
+    &nbsp;
 {% endif %}
-<p class="{{ session.availability.code }} availability">
+</h4>
+<sapn class="{{ session.availability.code }} availability">
     <i class="icon-{% if session.availability.is_available_to_buy %}ok{% else %}remove{% endif %}"></i>
     {% if verbose %}
         {{ session.availability.message }}
     {% else %}
         {{ session.availability.short_message }}
     {% endif %}
-</p>
+</span>

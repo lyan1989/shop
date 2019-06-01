@@ -332,3 +332,6 @@ OSCAR_ORDER_STATUS_CASCADE = {
     'Complete': 'Shipped',
 }
 
+# Oscar Currency settings
+OSCAR_DEFAULT_CURRENCY = 'USD'
+

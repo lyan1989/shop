@@ -6,11 +6,11 @@
 
 {% if session.availability.is_available_to_buy %}
     {% basket_form request product 'single' as basket_form %}
-    <form action="{% url 'basket:add' pk=product.pk %}" method="post">
-        {% csrf_token %}
-        {{ basket_form.as_p }}
-        <button type="submit" class="btn btn-primary btn-block" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
-    </form>
+    <div class="product-button-group"><a class="product-button btn-wishlist" href="#"><i class="icon-heart"></i><span>Wishlist</span></a>
+        <!-- <a class="product-button btn-compare" href="#"><i class="icon-repeat"></i><span>Compare</span></a> -->
+        <a class="product-button" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-check-circle" data-toast-title="Product" data-toast-message="successfuly added to cart!"><i class="icon-shopping-cart"></i><span>To Cart</span></a>
+    </div>
+
 {% else %}
     <span class="btn btn-default btn-block disabled">{% trans "Add to basket" %}</span>
 {% endif %}

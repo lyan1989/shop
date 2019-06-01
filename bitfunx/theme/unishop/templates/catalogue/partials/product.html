@@ -5,42 +5,46 @@
 {% load staticfiles %}
 
 {% block product %}
-    <div class="product-card mb-30">
-        {% block product_image %}
-            <div class="image_container">
-                {% with image=product.primary_image %}
-                    {% thumbnail image.original "x120" upscale=False as thumb %}
-                    <!-- <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="thumbnail"></a> -->
-                    <a class="product-thumb" href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="Product"></a>
-                    {% endthumbnail %}
-                {% endwith %}
-            </div>
-        {% endblock %}
 
-        {% block product_review %}
-            {% iffeature "reviews" %}
-            <div class="product-review"></div>
-                <div class="star-rating {{ product.rating|as_stars }}">
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                </div>
-            {% endiffeature %}
-        {% endblock %}
+{% block product_image %}
+<div class="product-thumb">
+    {% with image=product.primary_image %}
+    {% thumbnail image.original "x330" upscale=False as thumb %}
+    <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}"
+            class="thumbnail"></a>
+    {% endthumbnail %}
+    {% endwith %}
+</div>
+{% endblock %}
 
-        {% block product_title %}
-            <h3><a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></h3>
-        {% endblock %}
+{% block product_review %}
+{% iffeature "reviews" %}
+<div class="rating-stars {{ product.rating|as_stars }}">
+    <i class="icon-star"></i>
+    <i class="icon-star"></i>
+    <i class="icon-star"></i>
+    <i class="icon-star"></i>
+    <i class="icon-star"></i>
+</div>
+{% endiffeature %}
+{% endblock %}
+<div class="product-card-body">
+    {% block product_title %}
+    <div class="product-category"><a
+            href="{{ product.categories.last.get_absolute_url }}">{{ product.categories.last.get_last_name }}</a></div>
+    <h3 style="text-align: center" class="product-title"><a href="{{ product.get_absolute_url }}"
+            title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></h3>
+    {% endblock %}
+    {% block product_price %}
+    <div class="product_price">
+        {% include "catalogue/partials/stock_record.html" %}
 
-        {% block product_price %}
-            <div class="product_price">
-                {% include "catalogue/partials/stock_record.html" %}
-                {% if not product.is_parent and not product.has_options %}
-                    {% include "catalogue/partials/add_to_basket_form_compact.html" %}
-                {% endif %}
-            </div>
-        {% endblock %}
-        </div>
+    </div>
+
+    {% endblock %}
+
+</div>
+{% if not product.is_parent and not product.has_options %}
+{% include "catalogue/partials/add_to_basket_form_compact.html" %}
+{% endif %}
 {% endblock %}

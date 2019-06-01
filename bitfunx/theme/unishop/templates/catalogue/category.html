@@ -1,4 +1,4 @@
-{% extends "catalogue/browse.html" %}
+{% extends "layout_2_col.html" %}
 
 {% load i18n %}
 
@@ -9,6 +9,8 @@
 {% block description %}
 {{ category.description|default:""|striptags }}
 {% endblock %}
+
+
 
 {% block header%}
 <div class="page-header action">
@@ -23,8 +25,8 @@
 {% block breadcrumbs %}
 
 <div class="page-title">
-    <div class="container">
-            <div class="column">
+        <div class="container">
+          <div class="column">
                     <h1>{{ category.name }}</h1>
                   </div>
         <div class="column">

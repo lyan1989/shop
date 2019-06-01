@@ -18,11 +18,15 @@
 
 
 {# Main content of page - other layout templates may override this block #}
+
+{% block breadcrumbs %}{% endblock %}
+
 {% block content_wrapper %}
+
 <div class="container-fluid page">
 
     <div class="page_inner">
-        {% block breadcrumbs %}{% endblock %}
+ 
     
         {% include "partials/alert_messages.html" %}
         {% block subnavigation %}{% endblock %}

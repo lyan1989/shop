@@ -3,63 +3,54 @@
 {% load staticfiles %}
 
 {% with all_images=product.get_all_images %}
-    {# use length rather then count as the images get queried anyways #}
+{# use length rather then count as the images get queried anyways #}
 
-    {% if all_images|length > 1 %}
+{% if all_images|length > 1 %}
 
-        <div id="product_gallery" class="carousel slide">
-
-            <div class="thumbnail">
-                <div class="carousel-inner" role="listbox">
+<div class="product_gallery">
+    <div class="gallery-wrapper">
+        <!-- product video -->
+        <div class="gallery-item video-btn text-center"><a href="#" data-toggle="tooltip" data-type="video" data-video="&lt;div class=&quot;wrapper&quot;&gt;&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe class=&quot;pswp__video&quot; width=&quot;960&quot; height=&quot;640&quot; src=&quot;https://www.youtube.com/embed/CjNjcrQZtd8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;" title="Watch video"></a></div>
+            </div><span class="product-badge bg-danger">Sale</span>
+        <div class="product-carousel owl-carousel gallery-wrapper">
                 {% for image in all_images %}
-                    <div class="item {% if forloop.first %}active{% endif %}">
-                        {% thumbnail image.original "440x400" upscale=False as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
-                        {% endthumbnail %}
-                    </div>
-                {% endfor %}
+                <div class="gallery-item" data-hash="{{ forloop.counter0 }}">
+                <!-- <div class="item {% if forloop.first %}active{% endif %}"> -->
+                    {% thumbnail image.original "1000x667" upscale=False as thumb %}
+                    <a href="{{ thumb.url }}" data-size="1000x667"><img src="{{ thumb.url }}" alt="Product" /></a>
+                    {% endthumbnail %}
                 </div>
-                <a class="carousel-control left" href="#product_gallery" role="button" data-slide="prev">
-                    <span class="icon-prev fa-stack fa-lg" aria-hidden="true">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-angle-left fa-stack-1x"></i>
-                    </span>
-                </a>
-                <a class="carousel-control right" href="#product_gallery" role="button" data-slide="next">
-                    <span class="icon-next fa-stack fa-lg" aria-hidden="true">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-angle-right fa-stack-1x"></i>
-                    </span>
-                </a>
-            </div>
-
-            <ol class="carousel-indicators thumbnail">
-                {% for image in all_images %}
-                    <li data-target="#product_gallery" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}">
-                        {% thumbnail image.original "65x55" crop="center" as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
-                        {% endthumbnail %}
-                    </li>
                 {% endfor %}
-            </ol>
+      
         </div>
+      
+        <ul class="product-thumbnails">
+            {% for image in all_images %}
+            <li class="{% if forloop.first %}active{% endif %}"><a href="#{{ forloop.counter0 }}">
+                {% thumbnail image.original "65x55" crop="center" as thumb %}
+                <img src="{{ thumb.url }}" alt="Product" />
+                {% endthumbnail %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
     {% else %}
 
-        {# Only one image to show #}
-        <div id="product_gallery" class="carousel">
-            <div class="thumbnail">
-                <div class="carousel-inner">
-                    <div class="item active">
+    {# Only one image to show #}
+    <div id="product_gallery" class="carousel">
+        <div class="thumbnail">
+            <div class="carousel-inner">
+                <div class="item active">
                     {% with image=product.primary_image %}
-                        {% thumbnail image.original "440x400" upscale=False as thumb %}
-                            <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
-                        {% endthumbnail %}
+                    {% thumbnail image.original "440x400" upscale=False as thumb %}
+                    <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
+                    {% endthumbnail %}
                     {% endwith %}
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
     {% endif %}
-{% endwith %}
+    {% endwith %}
