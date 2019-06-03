@@ -10,74 +10,110 @@
 {% load purchase_info_tags %}
 {% load widget_tweaks %}
 {% block breadcrumbs %}
-<ul class="breadcrumb">
-     <li>
-        <a href="{{ homepage_url }}">{%  trans "Home" %}</a>
-    </li>
-    <li>
-         <a href="{{ email }}">Contact Us</a>
-    </li>
-</ul>
+
+    <div class="column">
+      <h1>Contacts</h1>
+    </div>
+    <div class="column">
+      <ul class="breadcrumbs">
+        <li><a href="{{ homepage_url }}">Home</a>
+        </li>
+        <li class="separator">&nbsp;</li>
+        <li class="activate">Contacts</li>
+      </ul>
+    </div>
 {% endblock %}
 
 
 {% block content %}
-    <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 form-box">
-        <div class="form-top">
-            <div class="form-top-left">
-                <h1>Contact us</h1>
-                <p>Fill in the form below to send us a message:</p>
-            </div>
-            <div class="form-top-right">
-                <i class="fa fa-envelope"></i>
-            </div>
-        </div>
-    <div class="form-bottom contact-form">
-        <form method="post" novalidate>
-        {% csrf_token %}
+<!-- Page Content-->
+<div class="container padding-bottom-2x mb-2">
 
-        {% for hidden_field in form.hidden_fields %}
-        {{ hidden_field }}
-  {% endfor %}
-
-  {% if form.non_field_errors %}
-    <div class="alert alert-danger" role="alert">
-      {% for error in form.non_field_errors %}
-        {{ error }}
-      {% endfor %}
+  <div class="row">
+    <div class="col-md-7">
+      <div class="display-3 text-muted opacity-75 mb-30">Customer Service</div>
     </div>
-  {% endif %}
+    <div class="col-md-5">
+      <ul class="list-icon">
+        <li> <i class="icon-mail text-muted"></i><a class="navi-link"
+            href="mailto:service@bitfunx.com">service@bitfunx.com</a></li>
+        <li> <i class="icon-skype text-muted"></i>Skype: xinole</li>
+        <li> <i class="icon-clock text-muted"></i>1 - 2 business days</li>
+      </ul>
+    </div>
+  </div>
+  <hr class="margin-top-2x">
+  <div class="row margin-top-2x">
+    <div class="col-md-7">
+      <div class="display-3 text-muted opacity-75 mb-30">Tech Support</div>
+    </div>
+    <div class="col-md-5">
+      <ul class="list-icon">
+        <li> <i class="icon-mail text-muted"></i><a class="navi-link"
+            href="mailto:support@bitfunx.com">support@bitfunx.com</a></li>
+        <li> <i class="icon-skype text-muted"></i>Skype: xinole</li>
+        <li> <i class="icon-clock text-muted"></i>1 - 2 business days</li>
+      </ul>
+    </div>
+  </div>
+  <hr class="margin-top-2x margin-bottom-2x">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-box">
+      <div class="form-top">
+        <div class="form-top-left">
+          <h1>Contact us</h1>
+          <p>Fill in the form below to send us a message:</p>
+        </div>
+        <div class="form-top-right">
+          <i class="fa fa-envelope"></i>
+        </div>
+      </div>
+      <div class="form-bottom contact-form">
+        <form method="post" novalidate>
+          {% csrf_token %}
 
-  {% for field in form.visible_fields %}
-    <div class="form-group">
-      {{ field.label_tag }}
+          {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+          {% endfor %}
 
-      {% if form.is_bound %}
-        {% if field.errors %}
-          {% render_field field class="form-control is-invalid" %}
-          {% for error in field.errors %}
+          {% if form.non_field_errors %}
+          <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+            {{ error }}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% for field in form.visible_fields %}
+          <div class="form-group">
+            {{ field.label_tag }}
+
+            {% if form.is_bound %}
+            {% if field.errors %}
+            {% render_field field class="form-control is-invalid" %}
+            {% for error in field.errors %}
             <div class="invalid-feedback">
               {{ error }}
             </div>
+            {% endfor %}
+            {% else %}
+            {% render_field field class="form-control is-valid" %}
+            {% endif %}
+            {% else %}
+            {% render_field field class="form-control" %}
+            {% endif %}
+
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+          </div>
           {% endfor %}
-        {% else %}
-          {% render_field field class="form-control is-valid" %}
-        {% endif %}
-      {% else %}
-        {% render_field field class="form-control" %}
-      {% endif %}
 
-      {% if field.help_text %}
-        <small class="form-text text-muted">{{ field.help_text }}</small>
-      {% endif %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
-  {% endfor %}
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    </div>
-</div>
+  </div>
 
-{% endblock %}
-
+  {% endblock %}
