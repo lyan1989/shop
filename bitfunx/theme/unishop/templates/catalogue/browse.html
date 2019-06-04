@@ -1,4 +1,4 @@
-{% extends "layout_2_col.html" %}
+{% extends "layout_3_col.html" %}
 
 {% load basket_tags %}
 {% load category_tags %}
@@ -11,7 +11,7 @@
 
 {% block headertext %}{{ summary }}{% endblock %}
 
-{% block breadcrumbs %}
+{% block fluid-breadcrumbs %}
 
 <div class="column">
     <h1>All Products</h1>
@@ -25,7 +25,7 @@
     </ul>
 </div>
 
-{% endblock breadcrumbs %}
+{% endblock  %}
 
 {% block column_left %}
 <div class="sidebar-toggle position-left"><i class="icon-filter"></i></div>

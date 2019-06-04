@@ -1,87 +1,77 @@
-{% extends "base.html" %}
+{% extends "layout_2_col.html" %}
 {% load static %}
 {% load cache %}
 
-{% block layout %}
-{% block silder %}
+{% block breadcrumbs  %}
 
     <!-- Page Title-->
     <div class="page-title">
       <div class="container">
         <div class="column">
-          <h1>Blog Right Sidebar</h1>
+          <h1>Bitfunx Blog </h1>
         </div>
         <div class="column">
           <ul class="breadcrumbs">
-            <li><a href="index.html">Home</a>
+            <li><a href="base.html">Home</a>
             </li>
             <li class="separator">&nbsp;</li>
-            <li>Blog Right Sidebar</li>
+            <li>Bitfunx Blog</li>
           </ul>
         </div>
       </div>
     </div>
  {% endblock %}
 
-	<div class="container head">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">首页</a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            {% for cate in navs %}
-              <li class="nav-item">
-                  <a class="nav-link" href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>
-              </li>
-            {% endfor %}
-            </ul>
-            <form class="form-inline" action='/search/' method='GET'>
-                <input class="form-control" type="search" name="keyword" placeholder="Search" aria-label="Search" value="{{ keyword }}">
-              <button class="btn btn-outline-success" type="submit">搜索</button>
-            </form>
-          </div>
-        </nav>
-        <div class="jumbotron">
-            <h1 class="display-4">Typeidea</h1>
-            <p class="lead">基于Django的多人博客系统</p>
-        </div>
-	</div>
-	<div class="container main">
-        <div class="row">
-            <div class="col-9 post-list">
+{% block content %}
+    <!-- Page Content-->
+    <div class="container padding-bottom-3x mb-1">
+      <div class="row">
+        <!-- Blog Posts-->
+          {% block blogcontent %}
+        <div class="col-lg-9 order-lg-2">
+
             {% block main %}
             {% endblock %}
-            </div>
-            <div class="col-3">
-                {% block sidebar %}
-                    {% for sidebar in sidebars %}
-                    <div class="card sidebar">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ sidebar.title }}</h4>
-                            <p>
-                            {{ sidebar.content_html }}
-                            </p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                {% endblock %}
-            </div>
-        </div>
-    </div>
 
-    <footer class="footer">
-        {% block footer %}
-        <div class="container">
-            <hr/>
-            <nav class="nav category">
-            {% for cate in categories %}
-            <a href="{% url 'category-list' cate.id %}" class="nav-link">{{ cate.name }}</a>
+          <!-- Pagination-->
+        </div>
+          {% endblock blogcontent %}
+        <!-- Sidebar          -->
+
+        <div class="col-lg-3 order-lg-1">
+          <div class="sidebar-toggle position-left"><i class="icon-filter"></i></div>
+          <aside class="sidebar sidebar-offcanvas position-left"><span class="sidebar-close"><i class="icon-x"></i></span>
+            <!-- Widget Search-->
+            <section class="widget">
+              <form class="input-group form-group" action='/search/' method="get"><span class="input-group-btn">
+                  <button type="submit"><i class="icon-search"></i></button></span>
+                <input class="form-control" type="search" name="keyword" placeholder="Search blog" value="{{ keyword }}">
+              </form>
+            </section>
+            <!-- Widget Categories-->
+            <section class="widget widget-categories">
+              <h3 class="widget-title">Top Categories</h3>
+              <ul>
+              {% for cate in categories %}
+                <li><a href="{% url 'category-list' cate.id %}">{{ cate.name }}</a><span>({{ cate.post_set.all.count }})</span></li>
+              {% endfor %}
+              </ul>
+            </section>
+            {% block sidebar %}
+            <!-- Widget Featured Posts-->
+            {% for sidebar in sidebars %}
+            <section class="widget widget-featured-posts">
+              <h3 class="widget-title">{{ sidebar.title }}</h3>
+              {{ sidebar.content_html }}
+           
+            </section>
             {% endfor %}
-            </nav>
+\
+              {% endblock sidebar %}
+          </aside>
         </div>
-        <div class="container power">
-            <span class="text-muted">Power by Typeidea@the5fire</span>
-        </div>
-        {% endblock %}
-    </footer>
+
+      </div>
+    </div>
 
 {% endblock %}

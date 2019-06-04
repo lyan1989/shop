@@ -1,52 +1,56 @@
 {% extends "layout.html" %}
 {% load promotion_tags %}
 
+
+
+{% block breadcrumbs %}
+
+    <div class="page-title">
+<div class="container">
+
+{% block fluid-breadcrumbs %}
+    {% endblock %}
+
+</div>
+    </div>
+
+{% endblock %}
+
+
 {% block content_wrapper %}
     <div class="container-fluid page">
-        <div class="page_inner">
-            {% block breadcrumbs %}{% endblock %}
 
-            <div class="row">
+{% block featured %} {% endblock %}
+    <div class="container padding-bottom-3x mb-1">
 
-                <aside class="col-sm-3">
-                    <div id="promotions_left">
-                        {% for promotion in promotions_left %}
+        <div class="row" >
+            <div class="col-lg-3 order-lg-2">
+                {# Render promotions at the top of the left-hand sidebar #}
+                <div id="promotions_left">
+                    {% for promotion in promotions_left %}
                         {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
-                    {% block column_left %} 
-                    {% endblock %}
-                </aside>
+                    {% endfor %}
+                </div>
+                {% block column_left %}{% endblock %}
+            </div>
 
-                <div class="col-sm-6">
-                    {% block header %}
-                    <div class="page-header action">
-                        <h1>{% block headertext %}{% endblock %}</h1>
-                    </div>
-                    {% endblock %}
-                    {% include "partials/alert_messages.html" %}
+            <!-- <div class="col-sm-8 col-md-9"> -->
+            <div class="col-lg-9 order-lg-2">
 
-                    <div id="promotions">
-                        {% for promotion in promotions_page %}
+
+                {% include "partials/alert_messages.html" %}
+
+                <div id="promotions">
+                    {% for promotion in promotions_page %}
                         {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
-
-                    {% block content %}{% endblock %}
+                    {% endfor %}
                 </div>
 
-                <aside class="col-sm-3">
-                    <div id="promotions_right">
-                        {% for promotion in promotions_right %}
-                        {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
-                    {% block column_right %} 
-                    {% endblock %}
-                </aside>
+                {% block content %}{% endblock %}
+            </div>
 
-            </div><!-- /row -->
-
-        </div><!-- /page_inner -->
-    </div><!-- /container-fluid -->
+        </div><!-- /row -->
+    </div><!-- /page_inner -->
+</div><!-- /container-fluid -->
 {% endblock %}
+

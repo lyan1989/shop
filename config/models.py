@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
+from blog.models import Tag
+
 class Link(models.Model):
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
@@ -34,12 +36,13 @@ class SideBar(models.Model):
     DISPLAY_LATEST = 2
     DISPLAY_HOT =3
     DISPLAY_COMMENT = 4
+    DISPLAY_TAGS = 5
     SIDE_TYPE = (
         (DISPLAY_HTML, 'HTML'),
-        (DISPLAY_HOT, 'HOT'),
-        (DISPLAY_COMMENT, 'Latest Comment'),
-        (DISPLAY_LATEST, 'Latest Article')
-
+        (DISPLAY_HOT, 'Featured Articles'),
+        (DISPLAY_COMMENT, 'Latest Comments'),
+        (DISPLAY_LATEST, 'Latest Articles'),
+        (DISPLAY_TAGS, 'Popular Tags')
     )
 
     title = models.CharField(max_length=50, verbose_name='title')
@@ -80,6 +83,11 @@ class SideBar(models.Model):
                 'comments' : Comment.objects.filter(status=Comment.STATUS_NORMAL)
             }
             result = render_to_string('config/blocks/sidebar_comments.html', context)
+        elif self.display_type == self.DISPLAY_TAGS:
+            context =  {
+                'tags' : Tag.objects.all()
+            }
+            result = render_to_string('config/blocks/sidebar_tags.html', context)
         return result
 
 # Create your models here.

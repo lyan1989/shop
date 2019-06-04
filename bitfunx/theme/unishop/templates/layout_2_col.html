@@ -1,52 +1,43 @@
 {% extends "layout.html" %}
 {% load promotion_tags %}
-
+{% load staticfiles %}
 {% comment %}
 Keep the same header and footer as the standard layout template but override the 
 main content area to split it into a sidebar and a content block
 {% endcomment %}
 
+
 {% block breadcrumbs %}
+
+    <div class="page-title">
+<div class="container">
+
+{% block fluid-breadcrumbs %}
+    {% endblock %}
+
+</div>
+    </div>
+
 {% endblock %}
 
 {% block content_wrapper %}
-<div class="container-fluid page">
-{% block silder %} {% endblock %}
+
+
+    {% block silder %}
+
+    {% endblock %}
+{% block topCategory %} {% endblock %}
 {% block featured %} {% endblock %}
+    {% block content %}{% endblock %}
+{# Local scripts #}
+{% block scripts %}
 
-    <div class="container padding-bottom-3x mb-1">
 
-        <div class="row" >
-            <div class="col-lg-3 order-lg-2">
-                {# Render promotions at the top of the left-hand sidebar #}
-                <div id="promotions_left">
-                    {% for promotion in promotions_left %}
-                        {% render_promotion promotion %}
-                    {% endfor %}
-                </div>
-                {% block column_left %}{% endblock %}
-            </div>
 
-            <!-- <div class="col-sm-8 col-md-9"> -->
-            <div class="col-lg-9 order-lg-2">
-                <!-- {% block header %}
-                <div class="page-header action">
-                    <h1>{% block headertext %}{% endblock %}</h1>
-                </div>
-                {% endblock %} -->
+           <script src="{% static 'js/vendor.min.js' %}"></script>
+            <script src="{% static 'js/scripts.min.js' %}"></script>
+<!-- Twitter Bootstrap -->
 
-                {% include "partials/alert_messages.html" %}
+{% endblock %}
 
-                <div id="promotions">
-                    {% for promotion in promotions_page %}
-                        {% render_promotion promotion %}
-                    {% endfor %}
-                </div>
-
-                {% block content %}{% endblock %}
-            </div>
-
-        </div><!-- /row -->
-    </div><!-- /page_inner -->
-</div><!-- /container-fluid -->
 {% endblock %}

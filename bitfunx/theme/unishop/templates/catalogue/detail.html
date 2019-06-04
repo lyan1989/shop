@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_3_col.html" %}
 
 {% load history_tags %}
 {% load currency_filters %}
@@ -25,7 +25,7 @@
 </script>
 {% endblock %}
 
-{% block breadcrumbs %}
+{% block fluid-breadcrumbs %}
 
 <div class="column">
     <h1>Product</h1>
@@ -34,7 +34,7 @@
     <ul class="breadcrumbs">
 
         {% with category=product.categories.all.0 %}
-        <li><a href="index.html">Home</a>
+        <li><a href="{{ homepage_url }}">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
         {% for c in category.get_ancestors_and_self %}
@@ -62,8 +62,6 @@
 
 {% endblock %}
 
-{% block header %}
-{% endblock header %}
 
 {% block content_wrapper %}
 
@@ -149,9 +147,6 @@
         {% endblock %}
     </div>
 
-
-
-
     <!-- Product Info-->
     <div class="row">
         {% block product_info %}
@@ -211,7 +206,10 @@
     <div class="row">
         {% block product_description %}
         {% if product.description %}
-        <div id="reviews" class="sub-header">
+        <div class="sub-header">
+                <h2>{% trans "Product Description" %}</h2>
+            </div>
+        <div>
             <p>{{ product.description|safe }}</p>
         </div>
         {% endif %}
@@ -256,7 +254,6 @@
 
     </div>
 
-
     <div class="row">
         {% with recommended_products=product.sorted_recommended_products|slice:":6" %}
         {% if recommended_products %}
@@ -266,59 +263,62 @@
 
         <section>
             <div class="row">
+
                 {% for product in recommended_products %}
-                <div >
-                    <div class="product-card mb-30">
+                <div>
+                        <div class="col-md-4 col-sm-6">
+                                <div class="product-card mb-30">
                         {% render_product product %}
+                    </div>
                     </div>
                 </div>
                 {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% recently_viewed_products current_product=product %}
+
             </div>
         </section>
-        {% endif %}
-        {% endwith %}
-
-        <!-- {% recently_viewed_products current_product=product %} -->
     </div>
 
-</div><!-- End of product page -->
-
-<!-- Photoswipe container-->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
+    <!-- Photoswipe container-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+</div><!-- End of product page -->
 {% endblock content_wrapper %}
 
 {% block extrascripts %}

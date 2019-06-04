@@ -25,6 +25,13 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def get_post_num(self):
+
+        num = self.post_set.all()
+        return len(num)
+
+
     @classmethod
     def get_navs(cls):
         categories = cls.objects.filter(status=cls.STATUS_NORMAL)
@@ -80,7 +87,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, verbose_name='category')
     owner = models.ForeignKey(User, verbose_name='author')
     created_time = models.DateTimeField(auto_now_add=True, verbose_name='created time')
-
+    # image = models.ImageField(width_field=1000, height_field=353, verbose_name='image')
     pv = models.PositiveIntegerField(default=1)
     uv = models.PositiveIntegerField(default=1)
 

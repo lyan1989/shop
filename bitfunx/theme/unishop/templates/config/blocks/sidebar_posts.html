@@ -1,7 +1,12 @@
-<ul>
+
 {% for post in posts %}
     {% if forloop.counter <= 3   %}
-<li><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+         <div class="entry">
+{#                <div class="entry-thumb"><a href="{% url 'post-detail' post.id %}"><img src="img/blog/widget/03.jpg" alt="Post"></a></div>#}
+                <div class="entry-content">
+                  <h4 class="entry-title"><a href="{% url 'post-detail' post.id %}"> {{ post.title }}</a></h4><span class="entry-meta">by {{ post.owner }}</span>
+                </div>
+              </div>
     {% endif %}
 {% endfor %}
-</ul>
+

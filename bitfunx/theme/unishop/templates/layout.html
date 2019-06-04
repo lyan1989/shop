@@ -6,30 +6,28 @@
 
 {% block header %}
     {% include 'partials/nav_primary.html' %}
+
 {% endblock %}
+
+
+
 
 {% block layout %}
 {# Top-horizontal bar with account, notifictions, dashboard links #}
 
 {# Site logo/title, mini-basket, browse dropdown and searchbox #}
 
-{% include 'partials/nav_primary.html' %}
-
-
-
 {# Main content of page - other layout templates may override this block #}
-<div class="page-title">
-        <div class="container">
+
 {% block breadcrumbs %}{% endblock %}
-</div>
-</div>
+
 {% block content_wrapper %}
 
 <div class="container-fluid page">
 
     <div class="page_inner">
  
-    
+    {% block featured %} {% endblock %}
         {% include "partials/alert_messages.html" %}
         {% block subnavigation %}{% endblock %}
         <div class="content">
@@ -58,7 +56,7 @@
 {{ block.super }}
 {% if use_less and debug %}
 {# Load the on-the-fly less compiler. Never do this in production. #}
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+{#<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>#}
 {% endif %}
 {% endblock %}
 
@@ -66,12 +64,7 @@
 {% block scripts %}
 {{ block.super }}
 <!-- Twitter Bootstrap -->
-<script src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
-<!-- Oscar -->
-<script src="{% static "oscar/js/oscar/ui.js" %}"></script>
 
-<script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
-<script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
 {% endblock %}
 
 {% block extrascripts %}

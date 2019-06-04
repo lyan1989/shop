@@ -1,13 +1,21 @@
 {% extends "layout_2_col.html" %}
 {% load i18n %}
+{% load staticfiles %}
 
-{% block navigation %}
-    {% include "partials/nav_primary.html" with expand_dropdown=1 %}
+    {% block styles %}
+        {{ block.super}}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/silder.css' %}">
+
 {% endblock %}
 
-{% block header %}{% endblock %}
 {% block silder %}
 {% include 'partials/slider.html' %}
+{% endblock %}
+
+
+{% block topCategory %}
+    {% include 'partials/topcategory.html' %}
 {% endblock %}
 {% block featured %}
 {% include 'partials/featured.html' %}
