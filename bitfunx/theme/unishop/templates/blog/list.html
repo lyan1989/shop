@@ -12,50 +12,52 @@
 
 
 {% block main %}
-              <div class="isotope-grid cols-2 mb-4">
-            <div class="gutter-sizer"></div>
-            <div class="grid-sizer"></div>
-{% for post in post_list %}
-<div class="grid-item">
-    <div class="blog-post">
-        <div class="post-body">
-            <ul class="post-meta">
-                <li><i class="icon-clock"></i><a href="{% url 'post-detail' post.id %}">{{ post.created_time }}</a></li>
-                <li><i class="icon-user"></i><a href="{% url 'author' post.owner_id %}">{{ post.owner }}</a></li>
-                <li><i class="icon-tag"></i><a href="{% url 'category-list' post.category_id %}">{{ post.category }}</a>
-                </li>
+    <div class="isotope-grid cols-2 mb-4">
+        <div class="gutter-sizer"></div>
+        <div class="grid-sizer"></div>
+        {% for post in post_list %}
+        <div class="grid-item">
+            <div class="blog-post">
+                <div class="post-body">
+                    <ul class="post-meta">
+                        <li><i class="icon-clock"></i><a href="{% url 'post-detail' post.id %}">{{ post.created_time }}</a>
+                        </li>
+                        <li><i class="icon-user"></i><a href="{% url 'author' post.owner_id %}">{{ post.owner }}</a></li>
+                        <li><i class="icon-tag"></i><a
+                                href="{% url 'category-list' post.category_id %}">{{ post.category }}</a>
+                        </li>
 
-            </ul>
-            <h3 class="post-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
-            <p>{{ post.desc }}... <a href="{% url 'post-detail' post.id %}">Read more</a></p>
+                    </ul>
+                    <h3 class="post-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+                    <p>{{ post.desc }}... <a href="{% url 'post-detail' post.id %}">Read more</a></p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-{% endfor %}
-
-              </div>
-
-
-{% if page_obj %}
-<nav class="pagination">
-
-    {% if page_obj.has_previous %}
-    <div class="column text-left hidden-xs-down"><a class="btn btn-outline-secondary btn-sm"
-            href="?page={{ page_obj.previous_page_number }}">Prev&nbsp;<i class="icon-chevron-right"></i></a>
+        {% endfor %}
 
     </div>
-    {% endif %}
-    <div class="column" ><a></a>
+
+
+    {% if page_obj %}
+    <nav class="pagination">
+
+        {% if page_obj.has_previous %}
+        <div class="column text-left hidden-xs-down"><a class="btn btn-outline-secondary btn-sm"
+                href="?page={{ page_obj.previous_page_number }}"><i class="icon-chevron-left"></i>Prev&nbsp;</a>
+
+        </div>
+        {% endif %}
+        <div class="column"><a></a>
             Page {{ page_obj.number }} of {{ paginator.num_pages }}.
 
-    </div>
-    {% if page_obj.has_next %}
+        </div>
+        {% if page_obj.has_next %}
 
-    <div class="column text-left hidden-xs-down"><a class="btn btn-outline-secondary btn-sm"
-            href="?page={{ page_obj.next_page_number }}">Next&nbsp;<i class="icon-chevron-right"></i></a></div>
-    {% endif %}
-    {% endif %}
+        <div class="column text-left hidden-xs-down"><a class="btn btn-outline-secondary btn-sm"
+                href="?page={{ page_obj.next_page_number }}">Next&nbsp;<i class="icon-chevron-right"></i></a></div>
+        {% endif %}
+        {% endif %}
 
-</nav>
+    </nav>
 {% endblock %}

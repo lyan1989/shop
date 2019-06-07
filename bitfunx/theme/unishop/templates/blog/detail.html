@@ -1,6 +1,5 @@
 {% extends "blog/base.html" %}
 
-{% block title %} {{ post.title }} {% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css">
@@ -10,44 +9,90 @@
 
 {% block main %}
     {% if post %}
+  <!-- Post Meta-->
+  <ul class="post-meta mb-4">
+    <li><i class="icon-clock"></i><a href="#">{{ post.created_time }}</a></li>
+    <li><i class="icon-user"></i><a href="{% url 'author' post.owner_id %}">{{ post.owner }}</a></li>
+    <li><i class="icon-tag"></i><a href="{% url 'category-list' post.category_id %}">{{ post.category.name }}</a></li>
+    <li><i class="icon-message-square"></i><a class="scroll-to" href="#comments">{{ comment_list.count }}</a></li>
+  </ul>
+    
+
     <h1>{{ post.title }}</h1>
-    <div>
-        <span>分类:<a href="{% url 'category-list' post.category_id %}">{{ post.category.name }}</a></span>
-        <span>作者:<a href="{% url 'author' post.owner_id %}">{{ post.owner.username }}</a></span>
-        <span>创建时间:{{ post.created_time }}</span>
-        <span>pv/uv:{{ post.pv }}/{{ post.uv }}</span>
+
+
+    <!-- Gallery-->
+    <div class="gallery-wrapper">
+    <div class="gallery-item"><a href="img/blog/single/01.jpg" data-size="1000x353"><img src="img/blog/single/th01.jpg" alt="Image"></a><span class="caption">Blog single post caption 1</span></div>
     </div>
-    <hr/>
+
+    {% autoescape off %}
+        {{ post.content_html }}
+    {% endautoescape %}
+        <p>sdf{{ post.get_absolute_url }}</p>
+          <!-- Post Navigation-->
+          <div class="entry-navigation">
+          {% if after_page == None %}
+              {% else %}
+            <div class="column text-left"><a class="btn btn-outline-secondary btn-sm"  href="{{ after_page.get_absolute_url }}"><i class="icon-arrow-left"></i>&nbsp;Prev</a></div>
+            {% endif %}
+              <div class="column"><a class="btn btn-outline-secondary view-all" href="{%  url 'blog' %}" data-toggle="tooltip" data-placement="top" title="All posts"><i class="icon-menu"></i></a></div>
+
+              {% if before_page == None %}
+                  {% else %}
+              <div class="column text-right"><a class="btn btn-outline-secondary btn-sm" href="{{ before_page.get_absolute_url }}">Next&nbsp;<i class="icon-arrow-right"></i></a></div>
+          {% endif %}
+                  </div>
+        <!-- Comments-->
+          <section class="padding-top-3x" data-offset-top="60" id="comments">
+            <h3 class="padding-bottom-1x">Comments</h3>
+            <!-- Comment-->
+              {% for comment in comment_list %}
+            <div class="comment">
+                <div class="comment-author-ava"><span> {{ comment.nickname }}</span></div>
+              <div class="comment-body">
+                <div class="comment-header">
+                  <h4 class="comment-title">{{ comment.target.title }}</h4>
+                </div>
+                <p class="comment-text">{{ comment.content }}</p>
+                <div class="comment-footer">
+                  <div class="column"><span class="comment-meta">{{ comment.created_time }}</span></div>
+
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+
+          </section>
+          <!-- Comment Form-->
+          <h4 class="padding-top-2x padding-bottom-1x">Leave a Comment</h4>
+          <form class="row" method="post" action="/comment/">
+              {% csrf_token %}
+               <input name="target_id" type="hidden" value="{{ post.id }}"/>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="comment-name">Name</label>
+                <input class="form-control form-control-rounded" type="text" name="nickname" id="nickname" placeholder="John Doe" required>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="comment-email">E-mail</label>
+                <input class="form-control form-control-rounded" type="email" name="email" id="email" placeholder="johndoe@email.com" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label for="comment-text">Comment</label>
+                <textarea class="form-control form-control-rounded" rows="7" name="content" id="content" placeholder="Write your comment here..." required></textarea>
+              </div>
+            </div>
+            <div class="col-12 text-right">
+              <button class="btn btn-primary" type="submit">Post Comment</button>
+            </div>
+          </form>
 
 
-{% autoescape off %}
-    {{ post.content_html }}
-{% endautoescape %}
+
     {% endif %}
-
-    <hr/>
-        <ul class="list-group">
-        {% for comment in comment_list %}
-            <li class="list-group-item">
-                <div class="nickname">
-                    <a href="{{ comment.website }}">{{ comment.nickname }}</a>
-                    <span>{{ comment.target.title }}{{ comment.created_time }}</span>
-                </div>
-                <div class="comment-content">
-                    {{ comment.content }}
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-
-    <div class="comment">
-        <form class="form-group" action="/comment/" method="POST">
-            {% csrf_token %}
-            <input name="target_id" type="hidden" value="{{ post.id }}"/>
-            {{ comment_form }}
-            <input type="submit" value="Done."/>
-        </form>
-    </div>
-
-
 {% endblock %}

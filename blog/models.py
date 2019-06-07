@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 import mistune
-
+from django.urls import reverse
 
 class Category(models.Model):
     STATUS_NORMAL =1
@@ -130,6 +130,13 @@ class Post(models.Model):
     @classmethod
     def latest_posts(cls):
         queryset = cls.objects.filter(status=cls.STATUS_NORMAL)
+
+    def get_absolute_url(self):
+        """
+        Return a product's absolute url
+        """
+        return reverse('post-detail',
+                       kwargs={'post_id':  self.id})
 
 
 # Create your models here.

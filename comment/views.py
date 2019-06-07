@@ -14,6 +14,7 @@ class CommentView(TemplateView):
     template_name = 'comment/result.html'
     def post(self,request,*args,**kwargs):
         comment_form = CommentForm(request.POST)
+
         post_id = request.POST.get('target_id')
         post = get_object_or_404(Post, pk=post_id)
         if comment_form.is_valid():
@@ -27,7 +28,7 @@ class CommentView(TemplateView):
         context = {
             'succeed' : succeed,
             'form' : comment_form,
-            'target' : post,
+            'target' : post.get_absolute_url(),
         }
         return self.render_to_response(context)
 # Create your views here.

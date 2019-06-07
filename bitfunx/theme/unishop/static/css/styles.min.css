@@ -3730,7 +3730,7 @@ a.card {
     top: 0;
     left: 0;
     width: 50px;
-    border-radius: 50%;
+    border-radius: 5%;
     overflow: hidden
 }
 

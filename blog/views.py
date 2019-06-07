@@ -37,7 +37,7 @@ class CommonViewMixin(object):
 class IndexView(CommonViewMixin,ListView):
     model = Post
     queryset = Post.latest_posts()
-    paginate_by = 1
+    paginate_by = 6
     context_object_name = 'post_list'
     template_name = 'blog/list.html'
 
@@ -94,15 +94,35 @@ class PostDetailView(CommonViewMixin, DetailView):
     context_object_name = 'post'
     pk_url_kwarg = 'post_id'
 
+
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         post_id = self.kwargs.get('post_id')
         post = get_object_or_404(Post, pk=post_id)
+        postAll = Post.objects.all().order_by('-created_time')
+        pagelist = list(postAll)
+        before_page = None
+        after_page = None
+        if post == pagelist[-1]:
+            before_page = pagelist[-2]
+            after_page = None
+        elif post == pagelist[0]:
+            before_page = None
+            after_page = pagelist[1]
+        else:
+            site = pagelist.index(post)
+            before_page = pagelist[site-1]
+            after_page = pagelist[site+1]
+
         context.update({
             'comment_form' : CommentForm,
-            'comment_list' : Comment.get_by_target(post)
+            'comment_list' : Comment.get_by_target(post),
+            'before_page'  : before_page,
+            'after_page'   : after_page
         })
         return context
+
+
 
     def get(self, request, *args, **kwargs):
         response = super(PostDetailView,self).get(request, *args, **kwargs)

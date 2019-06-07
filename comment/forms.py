@@ -1,6 +1,7 @@
 from django import forms
 from .models import Comment
 
+
 class CommentForm(forms.ModelForm):
     nickname = forms.CharField(
         label= 'nickname',
@@ -22,16 +23,7 @@ class CommentForm(forms.ModelForm):
             }
         )
     )
-    website = forms.CharField(
-        label='website',
-        max_length= 200,
-        widget=forms.widgets.URLInput(
-            attrs={
-                'class': 'form-control',
-                'style': "width:60%;"
-            }
-        )
-    )
+
     content = forms.CharField(
         label= 'Content',
         max_length= 2000,
@@ -53,6 +45,6 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['nickname', 'email', 'website', 'content' ]
+        fields = ['nickname', 'email', 'content' ]
 
 
