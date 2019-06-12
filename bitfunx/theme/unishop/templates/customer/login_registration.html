@@ -1,11 +1,11 @@
-{% extends "layout.html" %}
+{% extends "layout_3_col.html" %}
 {% load i18n %}
 
 {% block title %}
     {% trans 'Login or register' %} | {{ block.super }}
 {% endblock %}
 
-{% block breadcrumbs %}
+{% block fluid-breadcrumbs %}
     <ul class="breadcrumb">
         <li>
             <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
@@ -16,7 +16,7 @@
 
 {% block header %}{% endblock %}
 
-{% block content %}
+{% block content_wrapper %}
 
     <div class="row">
         <div class="col-sm-6 login_form">

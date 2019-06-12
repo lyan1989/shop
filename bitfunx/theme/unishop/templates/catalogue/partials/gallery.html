@@ -7,13 +7,12 @@
 
 {% if all_images|length > 1 %}
 
+
+
  
 
     <div class="product-gallery">
-   
-
             <div class="gallery-wrapper">
-                
               <!-- <div class="gallery-item video-btn text-center"><a href="#" data-toggle="tooltip" data-type="video" data-video="&lt;div class=&quot;wrapper&quot;&gt;&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe class=&quot;pswp__video&quot; width=&quot;960&quot; height=&quot;640&quot; src=&quot;https://www.youtube.com/embed/CjNjcrQZtd8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;" title="Watch video"></a></div> -->
             </div><span class="product-badge bg-danger">Sale</span>
             <div class="product-carousel owl-carousel gallery-wrapper">
@@ -22,7 +21,7 @@
               {% thumbnail image.original "1000x667" upscale=False as thumb %}
               <a href="{{ thumb.url }}" data-size="1000x667"><img src="{{ thumb.url }}" alt="Product" /></a>
               {% endthumbnail %}
-             
+
             </div>
             {% endfor %}
             </div>
@@ -32,14 +31,14 @@
                     {% thumbnail image.original "65x55" crop="center" as thumb %}
                 <img src="{{ thumb.url }}" alt="Product"/>
                 {% endthumbnail %}
-                
+
                 </a></li>
               {% endfor %}
             </ul>
           </div>
     {% else %}
 
-    {# Only one image to show #}
+     Only one image to show
     <div id="product_gallery" class="carousel">
         <div class="thumbnail">
             <div class="carousel-inner">

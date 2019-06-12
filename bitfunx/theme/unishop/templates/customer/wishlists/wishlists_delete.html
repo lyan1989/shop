@@ -1,22 +1,32 @@
 {% extends "customer/baseaccountpage.html" %}
 {% load i18n %}
 
-{% block breadcrumbs %}
-    <ul class="breadcrumb">
+{% block fluid-breadcrumbs %}
+
+      <div class="column">
+      <h1>My Wishlist</h1>
+    </div>
+    <div class="column">
+    <ul class="breadcrumbs">
         <li>
             <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
         </li>
+         <li class="separator">&nbsp;</li>
         <li>
             <a href="{% url 'customer:summary' %}">{% trans 'Account' %}</a>
         </li>
+         <li class="separator">&nbsp;</li>
         <li>
             <a href="{% url 'customer:wishlists-list' %}">{% trans 'Wish Lists' %}</a>
         </li>
+         <li class="separator">&nbsp;</li>
         <li>
             <a href="{% url 'customer:wishlists-detail' key=wishlist.key %}">{{ wishlist.name }}</a>
         </li>
+         <li class="separator">&nbsp;</li>
         <li class="active">{% trans "Delete?" %}</li>
     </ul>
+    </div>
 {% endblock %}
 
 {% block tabcontent %}

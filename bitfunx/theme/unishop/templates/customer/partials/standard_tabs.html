@@ -1,26 +1,25 @@
 {% load i18n %}
 {% load display_tags %}
 
-<li{% if active_tab == 'profile' %} class="active"{% endif %}>
-    <a href="{% url 'customer:profile-view' %}">{% trans "Profile" %}</a>
-</li>
-<li{% if active_tab == 'orders' %} class="active"{% endif %}>
-    <a href="{% url 'customer:order-list' %}">{% trans "Order History" %}</a>
-</li>
-<li{% if active_tab == 'addresses' %} class="active"{% endif %}>
-    <a href="{% url 'customer:address-list' %}">{% trans "Address Book" %}</a>
-</li>
-<li{% if active_tab == 'emails' %} class="active"{% endif %}>
-    <a href="{% url 'customer:email-list' %}">{% trans "Email History" %}</a>
-</li>
-<li{% if active_tab == 'alerts' %} class="active"{% endif %}>
-    <a href="{% url 'customer:alerts-list' %}">{% trans "Product Alerts" %}</a>
-</li>
-<li{% if active_tab == 'notifications' %} class="active"{% endif %}>
-    <a href="{% url 'customer:notifications-inbox' %}">{% trans "Notifications" %}</a>
-</li>
+<a class="list-group-item with-badge {% if active_tab == 'profile' %} active {% endif %} "  href="{% url 'customer:profile-view' %}" ><i class="icon-user"></i>
+  {% trans "Profile" %}
+</a>
+
+<a href="{% url 'customer:order-list' %}" class="list-group-item {% if active_tab == 'orders' %} active {% endif %} "><i class="icon-shopping-bag"></i> {% trans "Order History" %}</a>
+
+
+    <a href="{% url 'customer:address-list' %}"  class="list-group-item {% if active_tab == 'addresses' %} active {% endif %} "><i class="icon-map"></i> {% trans "Address Book" %}</a>
+
+
+    <a href="{% url 'customer:email-list' %}"  class="list-group-item {% if active_tab == 'emails' %} active {% endif %} "><i class="icon-mail"></i> {% trans "Email History" %}</a>
+
+    <a href="{% url 'customer:alerts-list' %}" class="list-group-item {% if active_tab == 'alerts' %} active {% endif %} "><i class="icon-clock"></i> {% trans "Product Alerts" %}</a>
+
+
+    <a href="{% url 'customer:notifications-inbox' %}"  class="list-group-item {% if active_tab == 'notifications' %} active {% endif %} " ><i class="icon-info"></i> {% trans "Notifications" %}</a>
+
 {% iffeature 'wishlists' %}
-    <li{% if active_tab == 'wishlists' %} class="active"{% endif %}>
-        <a href="{% url 'customer:wishlists-list' %}">{% trans "Wish Lists" %}</a>
-    </li>
+
+        <a href="{% url 'customer:wishlists-list' %}"  class="list-group-item {% if active_tab == 'wishlists' %} active {% endif %} "><i class="icon-heart"></i> {% trans "Wish Lists" %}</a>
+
 {% endiffeature %}

@@ -3,17 +3,8 @@
 {% load currency_filters %}
 {% load staticfiles %}
 
-{% block breadcrumbs %}
-    <ul class="breadcrumb">
-        <li>
-            <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
-        </li>
-        <li>
-            <a href="{% url 'customer:summary' %}">{% trans 'Account' %}</a>
-        </li>
-        <li class="active">{% trans 'Order history' %}</li>
-    </ul>
-{% endblock %}
+
+
 
 {% block tabcontent %}
 
