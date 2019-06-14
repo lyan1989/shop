@@ -13,7 +13,8 @@ class Product(AbstractProduct):
     tutorial = models.TextField(blank=True)
     aliexpress_url = models.URLField(blank=True)
 
-
+    def calculate_rating(self):
+        results
 
 from oscar.apps.catalogue.models import *
 

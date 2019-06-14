@@ -12,7 +12,6 @@
 {% block headertext %}{{ summary }}{% endblock %}
 
 {% block fluid-breadcrumbs %}
-
 <div class="column">
     <h1>All Products</h1>
 </div>
@@ -24,8 +23,8 @@
         <li class="activate">{{ summary }}</li>
     </ul>
 </div>
+{% endblock %}
 
-{% endblock  %}
 
 {% block column_left %}
 <div class="sidebar-toggle position-left"><i class="icon-filter"></i></div>
@@ -85,39 +84,6 @@
 {% endblock %}
 
 {% block content %}
-
-<form method="get" class="form-horizontal">
-    {# Render other search params as hidden inputs #}
-    {% for value in selected_facets %}
-    <input type="hidden" name="selected_facets" value="{{ value }}" />
-    {% endfor %}
-    <input type="hidden" name="q" value="{{ search_form.q.value|default_if_none:"" }}" />
-
-    {% if paginator.count %}
-    {% if paginator.num_pages > 1 %}
-    {% blocktrans with start=page_obj.start_index end=page_obj.end_index count num_results=paginator.count %}
-    <strong>{{ num_results }}</strong> result - showing <strong>{{ start }}</strong> to <strong>{{ end }}</strong>.
-    {% plural %}
-    <strong>{{ num_results }}</strong> results - showing <strong>{{ start }}</strong> to <strong>{{ end }}</strong>.
-    {% endblocktrans %}
-    {% else %}
-    {% blocktrans count num_results=paginator.count %}
-    <strong>{{ num_results }}</strong> result.
-    {% plural %}
-    <strong>{{ num_results }}</strong> results.
-    {% endblocktrans %}
-    {% endif %}
-    {% if form %}
-    <div class="pull-right">
-        {% include "partials/form_field.html" with field=form.sort_by %}
-    </div>
-    {% endif %}
-    {% else %}
-    <p>
-        {% trans "<strong>0</strong> results." %}
-    </p>
-    {% endif %}
-</form>
 
 {% if products %}
 <section>
