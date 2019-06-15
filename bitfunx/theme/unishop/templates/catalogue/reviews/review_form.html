@@ -5,10 +5,13 @@
     <div id="addreview" class="review_add">
         <form id="add_review_form" method="post" action="./#addreview">
             <fieldset>
-                <legend>{% trans "Leave a product review" %}</legend>
+               <h2 class="padding-bottom-1x ">{% trans "Leave a Review" %}</h2>
                 {% csrf_token %}
 
                 {% include 'partials/form_field.html' with field=form.title %}
+                    {% include 'partials/form_field.html' with field=form.name %}
+
+                    {% include 'partials/form_field.html' with field=form.email %}
 
                 <div class="reviewrating form-group {% if form.score.errors %}error{% endif %}">
                     <label for="{{ form.score.auto_id }}" class="control-label required">
@@ -35,12 +38,9 @@
                 </div>
 
                 {% include 'partials/form_field.html' with field=form.body %}
-                {% if form.name %}
-                    {% include 'partials/form_field.html' with field=form.name %}
-                {% endif %}
-                {% if form.email %}
-                    {% include 'partials/form_field.html' with field=form.email %}
-                {% endif %}
+
+
+
 
 
                 <button type="submit" class="btn btn-primary btn-lg" data-loading-text="{% trans 'Saving...' %}">{% trans "Save review" %}</button>
