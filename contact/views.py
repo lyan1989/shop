@@ -34,3 +34,19 @@ def successView(request):
     return render(request, 'contact/success.html')
 
 
+def comingView(request):
+    if request.method == "GET":
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                subject = subject + '  From  ' + from_email
+                send_mail(subject, message, EMAIL_FROM, ['liyan@xinole.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found!')
+            return redirect(render(request, 'promotions/coming-success.html'))
+    return render(request, 'promotions/coming-soon.html', {'form': form})
