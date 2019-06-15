@@ -304,7 +304,7 @@ EMAIL_HOST_USER = 'xinolegame@gmail.com'
 EMAIL_HOST_PASSWORD = '31415926_xyz'
 EMAIL_USE_TLS  = True
 EMAIL_USE_SSL = False
-
+EMAIL_FROM = 'support@bitfunx.com'
 
 
 # Order processing

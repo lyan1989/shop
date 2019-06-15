@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from contact.forms import ContactForm
 from bitfunx import  settings
-
+from bitfunx.settings import EMAIL_FROM
 
 # Create your views here.
 def emailView(request):
@@ -22,7 +22,7 @@ def emailView(request):
             message = form.cleaned_data['message']
             try:
                 subject = subject +'  From  ' + from_email
-                send_mail(subject, message, from_email, ['liyan@xinole.com'])
+                send_mail(subject, message, EMAIL_FROM, [from_email])
             except BadHeaderError:
                 return HttpResponse('Invalid header found!')
             return redirect('send_email_success')
