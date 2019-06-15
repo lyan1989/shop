@@ -48,5 +48,5 @@ def comingView(request):
                 send_mail(subject, message, EMAIL_FROM, ['liyan@xinole.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found!')
-            return redirect(render(request, 'promotions/coming-success.html'))
+            return render(request, 'promotions/coming-success.html')
     return render(request, 'promotions/coming-soon.html', {'form': form})
