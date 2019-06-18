@@ -41,7 +41,7 @@ urlpatterns = [
     url(r'^blog/$', IndexView.as_view(), name='blog'),
     url(r'^blog/about/$', TemplateView.as_view(template_name="blog/about.html")),
     url(r'^links/$', LinkView.as_view(), name='links'),
-    url(r'^search/$', SearchView.as_view(), name='search'),
+    url(r'^blog/search/$', SearchView.as_view(), name='search'),
     url(r'^author/(?P<owner_id>\d+)/$', AuthorView.as_view(), name='author'),
     url(r'^comment/$', CommentView.as_view(), name='comment'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),

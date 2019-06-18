@@ -6,18 +6,25 @@
 {% endblock %}
 
 {% block fluid-breadcrumbs %}
-    <ul class="breadcrumb">
+    <div class="column">
+    <h1>Login</h1>
+</div>
+<div class="column">
+
+    <ul class="breadcrumbs">
         <li>
             <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
         </li>
+        <li class="separator"></li>
         <li class="active">{% trans 'Login or register' %}</li>
     </ul>
+</div>
 {% endblock %}
 
 {% block header %}{% endblock %}
 
 {% block content_wrapper %}
-
+  <div class="container page">
     <div class="row">
         <div class="col-sm-6 login_form">
             <form id="login_form" action="{{ request.get_full_path }}" method="post" class="well" >
@@ -37,5 +44,9 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
+  </div>
+=======
 
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
 {% endblock  %}

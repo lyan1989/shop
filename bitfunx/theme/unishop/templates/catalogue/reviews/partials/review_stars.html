@@ -2,12 +2,17 @@
 {% load i18n %}
 
 {% if product.rating != None %}
-    <p class="star-rating {{ product.rating|as_stars }}">
-        <i class="icon-star"></i>
-        <i class="icon-star"></i>
-        <i class="icon-star"></i>
-        <i class="icon-star"></i>
-        <i class="icon-star"></i>
+    <div class="text-left">
+                            <div class="d-inline align-baseline display-3 mr-1">{{ product.rating }}</div>
+                           <div class="d-inline align-baseline text-sm text-warning mr-1">
+                                <div class="rating-stars">
+                                    <i class="icon-star {% if product.rating > 0 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 1 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 2 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 3 %}filled {% endif %}"></i>
+                                    <i class="icon-star"{% if product.rating > 4 %}filled {% endif %}></i>
+                                </div>
+                            </div>
 
         <small><a href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.id %}">
                 {% blocktrans count product.num_approved_reviews as num_reviews %}
@@ -27,3 +32,4 @@
     </a>
 {% endif %}
 </p>
+  </div>

@@ -1,5 +1,5 @@
-{% extends "layout_3_col.html" %}
-
+{% extends "layout_2_col.html" %}
+{% load staticfiles %}
 {% load history_tags %}
 {% load i18n %}
 
@@ -40,11 +40,11 @@
 {% endblock  %}
 
 {% block content %}
+<div class="container padding-top-2x">
 
-    <section>        
-        {% include 'catalogue/reviews/review_product.html' %}
+    {% include 'catalogue/reviews/review_product.html' %}
 
-        {% if reviews %}
+<div class="text-center">
             <form action="." method="get" class="form-inline">
                 {% for field in form %}
                     {{ field.label }}
@@ -52,15 +52,29 @@
                 {% endfor %}
                 <input type="submit" class="btn btn-default" value="{% trans "Go" %}" />
             </form>
+</div>
+  {% for review in product.reviews.approved.all %}
+                <div class="comment">
+                    <div class="comment-author-ava"><img src="{% static 'img/reviews/test.jpg' %}" alt="Comment author"></div>
+                    <div class="comment-body">
+                        <div class="d-inline align-baseline text-sm text-warning mr-1">
+                                <div class="rating-stars">
+                                    <i class="icon-star {% if review.score > 0 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 1 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 2 %}filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 3 %}filled {% endif %}"></i>
+                                    <i class="icon-star"{% if review.score > 4 %}filled {% endif %}></i>
+                                </div>
+                            </div>
+                        <p class="comment-text">{{ review.body }}</p>
+                        <div class="comment-footer"><span>By </span><span class="comment-meta">{{ review.user }} on {{ review.date_created }}</span></div>
+                    </div>
+                </div>
+                {% endfor %}
 
-            {% for review in reviews %}
-                {% include 'catalogue/partials/review.html' %}
-            {% endfor %}
-            {% include 'partials/pagination.html' %}
 
-        {% else %}
-            <p>{% trans "This product does not have any reviews yet." %}</p>
-        {% endif %}
 
-    </section>
+
+
+</div>
 {% endblock %}

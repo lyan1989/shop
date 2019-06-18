@@ -22,25 +22,25 @@
 
 {% block product_review %}
 {% iffeature "reviews" %}
-<div class="rating-stars {{ product.rating|as_stars }}">
-    <i class="icon-star"></i>
-    <i class="icon-star"></i>
-    <i class="icon-star"></i>
-    <i class="icon-star"></i>
-    <i class="icon-star"></i>
-</div>
+{#<div class="d-inline align-baseline display-3 mr-1">{{ product.rating }}</div>#}
+                            <div class="d-inline align-baseline text-sm text-warning mr-1">
+                                <div class="rating-stars"><i class="icon-star filled"></i><i
+                                        class="icon-star filled"></i><i class="icon-star filled"></i><i
+                                        class="icon-star filled"></i><i class="icon-star"></i>
+                                </div>
+                            </div>
 {% endiffeature %}
 {% endblock %}
 
 <div class="product-card-body">
     {% block product_title %}
-    <div class="product-category"><a
-            href="{{ product.categories.last.get_absolute_url }}">{{ product.categories.last.get_last_name }}</a></div>
+{#    <div class="product-category"><a#}
+{#            href="{{ product.categories.last.get_absolute_url }}">sdf{{ product.categories.last }}</a></div>#}
     <h3 style="text-align: center" class="product-title"><a href="{{ product.get_absolute_url }}"
             title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></h3>
     {% endblock %}
     {% block product_price %}
-    <div class="product_price">
+    <div class="product_price ">
         {% include "catalogue/partials/stock_record.html" %}
 
     </div>
