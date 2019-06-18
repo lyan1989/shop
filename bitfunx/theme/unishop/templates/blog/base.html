@@ -43,7 +43,7 @@
           <aside class="sidebar sidebar-offcanvas position-left"><span class="sidebar-close"><i class="icon-x"></i></span>
             <!-- Widget Search-->
             <section class="widget">
-              <form class="input-group form-group" action='/search/' method="get"><span class="input-group-btn">
+              <form class="input-group form-group" action='{% url 'search' %}' method="get"><span class="input-group-btn">
                   <button type="submit"><i class="icon-search"></i></button></span>
                 <input class="form-control" type="search" name="keyword" placeholder="Search blog" value="{{ keyword }}">
               </form>
