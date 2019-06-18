@@ -5,5 +5,5 @@ urlpatterns = [
     url(r'^success/', views.successView, name='send_email_success'),
     url(r'^email/', views.emailView, name='email'),
     url(r'^$', views.emailView, name='contact_us'),
-
+    url(r'^coming-soon/$', views.comingView, name='contact_us_soon'),
 ]

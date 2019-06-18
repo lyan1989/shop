@@ -64,6 +64,9 @@
 
 
 {% block content_wrapper %}
+
+
+
 <div class="container padding-bottom-3x">
     <!-- Start of product page -->
     <div class="row">
@@ -219,7 +222,7 @@
 <div class="bg-secondary padding-top-3x padding-bottom-3x" id="reviews">
     <div class="container">
         <div class="row">
-                {%  block product_review %}
+        {%  block product_review %}
             <div class="col-md-4 mb-4">
                 <div class="card border-default">
                     <div class="card-body">
@@ -227,43 +230,80 @@
                             <div class="d-inline align-baseline display-3 mr-1">{{ product.rating }}</div>
                             <div class="d-inline align-baseline text-sm text-warning mr-1">
                                 <div class="rating-stars">
+<<<<<<< HEAD
                                     <i class="icon-star {% if product.rating > 0 %}filled {% endif %}"></i>
                                     <i class="icon-star {% if product.rating > 1 %}filled {% endif %}"></i>
                                     <i class="icon-star {% if product.rating > 2 %}filled {% endif %}"></i>
                                     <i class="icon-star {% if product.rating > 3 %}filled {% endif %}"></i>
                                     <i class="icon-star"{% if product.rating > 4 %}filled {% endif %}></i>
+=======
+                                    <i class="icon-star {% if product.rating > 0 %} filled {% endif %} "></i>
+                                    <i class="icon-star {% if product.rating > 1 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 2 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 3 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if product.rating > 4 %} filled {% endif %}"></i>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                                 </div>
                             </div>
                         </div>
                         <div class="pt-3">
+<<<<<<< HEAD
                             <label class="text-medium text-sm">5 stars <span class='text-muted'>- {{ product.num_5stars }} </span></label>
+=======
+                            <label class="text-medium text-sm">5 stars <span class='text-muted'>- {{ product.num_5stars }}</span></label>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                             <div class="progress margin-bottom-1x">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.percent_5stars }}%; height: 2px;"
                                     aria-valuenow="{{ product.percent_5stars }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
+<<<<<<< HEAD
                             <label class="text-medium text-sm">4 stars <span class='text-muted'>- {{ product.num_4stars }}</span></label>
+=======
+                            <label class="text-medium text-sm">4 stars <span class='text-muted'>-  {{ product.num_4stars }}</span></label>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                             <div class="progress margin-bottom-1x">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.percent_4stars }}%; height: 2px;"
                                     aria-valuenow="{{ product.percent_4stars }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
+<<<<<<< HEAD
                             <label class="text-medium text-sm">3 stars <span class='text-muted'>- {{ product.num_3stars }}</span></label>
+=======
+                            <label class="text-medium text-sm">3 stars <span class='text-muted'>-  {{ product.num_3stars }}</span></label>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                             <div class="progress margin-bottom-1x">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.percent_3stars}}%; height: 2px;"
                                     aria-valuenow="{{ product.percent_3stars }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
+<<<<<<< HEAD
                             <label class="text-medium text-sm">2 stars <span class='text-muted'>- {{ product.num_2stars }}</span></label>
+=======
+                            <label class="text-medium text-sm">2 stars <span class='text-muted'>-  {{ product.num_2stars }}</span></label>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                             <div class="progress margin-bottom-1x">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.percent_2stars }}%; height: 2px;"
                                     aria-valuenow="{{ product.percent_2stars }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
+<<<<<<< HEAD
                             <label class="text-medium text-sm">1 star <span class='text-muted'>- {{ product.num_1stars }} </span></label>
+=======
+                            <label class="text-medium text-sm">1 star <span class='text-muted'>-  {{ product.num_1stars }}</span></label>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                             <div class="progress mb-2">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.percent_1stars }}%; height: 2px;"
                                     aria-valuenow="{{ product.percent_1stars }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+<<<<<<< HEAD
                         {% url 'catalogue:reviews-add' product_slug=product.slug product_pk=product.id as add_review_url %}
                         <div class="pt-2"><a class="btn btn-warning btn-block" href="{% url 'catalogue:reviews-add' product_slug=product.slug product_pk=product.id %}#addreview" >Leave a Review</a></div>
+=======
+                    {% if request.user.is_authenticated %}
+                         <div class="pt-2"><a class="btn btn-warning btn-block" href="{% url 'catalogue:reviews-add' product_slug=product.slug product_pk=product.id %}#addreview" >Leave a Review</a></div>
+                    {% else %}
+                         <div class="pt-2"><a class="btn btn-warning btn-block" href="{% url 'customer:login' %}" >Leave a Review</a></div>
+                     {% endif %}
+
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                     </div>
                 </div>
             </div>
@@ -277,6 +317,7 @@
                         <div class="comment-header d-flex flex-wrap justify-content-between">
                             <h4 class="comment-title">{{ review.title }}</h4>
                             <div class="mb-2">
+<<<<<<< HEAD
                                 <div class="d-inline align-baseline text-sm text-warning mr-1">
                                 <div class="rating-stars">
                                     <i class="icon-star {% if review.score > 0 %}filled {% endif %}"></i>
@@ -284,19 +325,31 @@
                                     <i class="icon-star {% if review.score > 2 %}filled {% endif %}"></i>
                                     <i class="icon-star {% if review.score > 3 %}filled {% endif %}"></i>
                                     <i class="icon-star"{% if review.score > 4 %}filled {% endif %}></i>
+=======
+                               <div class="rating-stars">
+                                    <i class="icon-star {% if review.score > 0 %} filled {% endif %} "></i>
+                                    <i class="icon-star {% if review.score > 1 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 2 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 3 %} filled {% endif %}"></i>
+                                    <i class="icon-star {% if review.score > 4 %} filled {% endif %}"></i>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                                 </div>
                             </div>
                             </div>
                         </div>
                         <p class="comment-text">{{ review.body }}</p>
+<<<<<<< HEAD
                         <div class="comment-footer"><span>By </span><span class="comment-meta">{{ review.user }} on {{ review.data_created }}</span></div>
+=======
+                        <div class="comment-footer"><span class="comment-meta">{{ review.user }}</span></div>
+>>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
                     </div>
                 </div>
                 {% endfor %}
 
                 <!-- View All Button--><a class="btn btn-secondary btn-block" href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.id %}">View All Reviews</a>
             </div>
-                    {% endblock %}
+         {% endblock %}
         </div>
     </div>
 </div>
