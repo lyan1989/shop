@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load currency_filters %}
-
-<p>
+<div class="form-inline text-right">
+<div>
     {% if basket.is_empty %}
         {% trans "Your basket is now empty" %}
     {% else %}
@@ -15,11 +15,13 @@
             {% endblocktrans %}
         {% endif %}
     {% endif %}
-</p>
+</div>
 
 {% if include_buttons %}
-<p>
-    <a href="{% url 'basket:summary' %}" class="btn btn-info">{% trans "View basket" %}</a>
-    <a href="{% url 'checkout:index' %}" class="btn btn-info">{% trans "Checkout now" %}</a>
-</p>
+<div>
+    <a href="{% url 'basket:summary' %}" class="btn btn-info text-white">{% trans "View basket" %}</a>
+    <a href="{% url 'checkout:index' %}" class="btn btn-danger text-white">{% trans "Checkout now" %}</a>
+</div>
 {% endif %}
+
+</div>

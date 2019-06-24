@@ -17,29 +17,16 @@ class Product(AbstractProduct):
 
     @property
     def num_5stars(self):
-<<<<<<< HEAD
+
         return self.reviews.filter(
             status=self.reviews.model.APPROVED, score=5
         ).count()
     @property
     def percent_5stars(self):
         return (100 * self.num_5stars) / self.reviews.all().count()
-=======
-        return self.reviews.filter(status=self.reviews.model.APPROVED, score=5).count()
-    @property
-    def num_4stars(self):
-        return self.reviews.filter(status=self.reviews.model.APPROVED, score=4).count()
-    @property
-    def num_3stars(self):
-        return self.reviews.filter(status=self.reviews.model.APPROVED, score=3).count()
-    @property
-    def num_2stars(self):
-        return self.reviews.filter(status=self.reviews.model.APPROVED, score=2).count()
-    @property
-    def num_1stars(self):
-        return self.reviews.filter(status=self.reviews.model.APPROVED, score=1).count()
 
->>>>>>> 45f0b5823a65ea9219556302dd2dcfa09a7beec4
+        return self.reviews.filter(status=self.reviews.model.APPROVED, score=5).count()
+
 
     @property
     def num_4stars(self):

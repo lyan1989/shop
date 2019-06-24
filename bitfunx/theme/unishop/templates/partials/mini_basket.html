@@ -1,7 +1,7 @@
 {% load currency_filters %}
 {% load i18n %}
 <a href="{% url 'basket:summary' %}">
-    <div><span class="cart-icon"><i class="icon-shopping-cart"></i><span class="count-label">3      </span></span>
+    <div><span class="cart-icon"><i class="icon-shopping-cart"></i><span class="count-label">{{ request.basket.all_lines.count }}     </span></span>
    <br> <span lass="text-label">Cart</span></div></a>
 
  <div class="toolbar-dropdown cart-dropdown widget-cart hidden-on-mobile">
