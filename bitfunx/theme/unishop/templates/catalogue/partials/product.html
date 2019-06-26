@@ -36,11 +36,11 @@
     {% block product_title %}
 {#    <div class="product-category"><a#}
 {#            href="{{ product.categories.last.get_absolute_url }}">sdf{{ product.categories.last }}</a></div>#}
-    <h3 style="text-align: center" class="product-title"><a href="{{ product.get_absolute_url }}"
-            title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></h3>
+    <stong style="text-align: center" class="product-title"><a href="{{ product.get_absolute_url }}"
+            title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></stong>
     {% endblock %}
     {% block product_price %}
-    <div class="product_price ">
+    <div class="product_price">
         {% include "catalogue/partials/stock_record.html" %}
 
     </div>

@@ -3,7 +3,7 @@
 {% load purchase_info_tags %}
 
 {% purchase_info_for_product request product as session %}
-<h4 class="product-price">
+<span class="product-price">
 {% if session.price.exists %}
 
     {% if session.price.excl_tax == 0 %}
@@ -16,7 +16,7 @@
 {% else %}
     &nbsp;
 {% endif %}
-</h4>
+</span>
 <!-- <sapn class="{{ session.availability.code }} availability">
     <i class="icon-{% if session.availability.is_available_to_buy %}ok{% else %}remove{% endif %}"></i>
     {% if verbose %}

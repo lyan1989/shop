@@ -6936,7 +6936,8 @@ video {
 }
 
 .product-card .product-card-body {
-  padding: 18px;
+  padding: 5px;
+  /* #padding: 18px; */
   padding-top: 15px;
   text-align: center;
 }
